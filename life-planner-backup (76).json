@@ -1,0 +1,3204 @@
+{
+  "tasks": [
+    {
+      "id": "16jgvvly",
+      "done": true,
+      "created": "2026-08-23",
+      "title": "دیپلم زبان",
+      "cat": "دیپلم",
+      "date": "",
+      "priority": "critical",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "status": "inprogress",
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-26"
+    },
+    {
+      "id": "8aorgb93",
+      "done": true,
+      "created": "2026-09-14",
+      "title": "آپدیت جدید لایف پلنر",
+      "cat": "پروژه",
+      "date": "",
+      "priority": "medium",
+      "status": "queued",
+      "est": "30",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-23"
+    },
+    {
+      "id": "tdzl03yk",
+      "done": true,
+      "created": "2026-09-15",
+      "title": "درست کردن بازی سوپرمارکت اول شخص",
+      "cat": "پروژه",
+      "date": "",
+      "priority": "low",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-18"
+    },
+    {
+      "id": "o1v3vhsh",
+      "done": true,
+      "created": "2026-09-17",
+      "title": "آپدیت جدید سایبرآرنا",
+      "cat": "پروژه",
+      "date": "",
+      "priority": "low",
+      "status": "queued",
+      "est": "30",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-18"
+    },
+    {
+      "id": "v1qqixxt",
+      "done": true,
+      "created": "2026-09-17",
+      "title": "آپدیت جدید سوپرمارکت",
+      "cat": "پروژه",
+      "date": "",
+      "priority": "low",
+      "status": "queued",
+      "est": "30",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-18"
+    },
+    {
+      "id": "p8tfjrxx",
+      "done": true,
+      "created": "2026-09-21",
+      "title": "مشاوره چت‌جی‌پی‌تی",
+      "cat": "تحقیق",
+      "date": "",
+      "priority": "critical",
+      "status": "queued",
+      "est": "30",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-21"
+    },
+    {
+      "id": "9ore7tj2",
+      "done": true,
+      "created": "2026-09-21",
+      "title": "سوال در مورد دوچرخه‌سواری/رانندگی",
+      "cat": "تحقیق",
+      "date": "",
+      "priority": "critical",
+      "status": "queued",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-22"
+    },
+    {
+      "id": "oy2eevr2",
+      "done": true,
+      "created": "2026-09-23",
+      "title": "انجام کارهای مدرسه",
+      "cat": "مدرسه",
+      "date": "",
+      "priority": "high",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [
+        {
+          "id": "ntyrm7jz",
+          "title": "گرفتن شماره ناصری",
+          "done": true
+        },
+        {
+          "id": "gjjeefqt",
+          "title": "گرفتن شماره مدرسه",
+          "done": true
+        },
+        {
+          "id": "bfqq6rb4",
+          "title": "گرفتن کانال شاد",
+          "done": true
+        }
+      ],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-26"
+    },
+    {
+      "id": "rjn7ew8h",
+      "done": true,
+      "created": "2026-09-24",
+      "title": "رسیدن به کلاس های اصلی ماز",
+      "cat": "درس",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [
+        {
+          "id": "u5ywilwd",
+          "title": "عربی",
+          "done": true
+        },
+        {
+          "id": "z679ywi8",
+          "title": "جامعه شناسی",
+          "done": true
+        },
+        {
+          "id": "np9qwrc8",
+          "title": "ریاضی و آمار",
+          "done": true
+        },
+        {
+          "id": "e8c5lldp",
+          "title": "علوم و فنون ادبی",
+          "done": true
+        },
+        {
+          "id": "az23omvf",
+          "title": "منطق",
+          "done": true
+        },
+        {
+          "id": "cv3wq232",
+          "title": "اقتصاد",
+          "done": true
+        }
+      ],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-11"
+    },
+    {
+      "id": "cdxs1s2g",
+      "done": true,
+      "created": "2026-09-28",
+      "title": "انجام دادن آزمون غربالگری",
+      "cat": "مدرسه",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "60",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-02"
+    },
+    {
+      "id": "1nj70qav",
+      "done": true,
+      "created": "2026-09-28",
+      "title": "دیدن پیش نیاز های دروس ماز",
+      "cat": "ماز",
+      "date": "",
+      "priority": "critical",
+      "status": "queued",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [
+        {
+          "id": "44wkstl7",
+          "title": "زبان",
+          "done": true
+        },
+        {
+          "id": "hacvywt1",
+          "title": "فارسی",
+          "done": true
+        }
+      ],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-02"
+    },
+    {
+      "id": "t8jibvqa",
+      "done": true,
+      "created": "2026-09-29",
+      "title": "میخ کردن کتاب جغرافیا",
+      "cat": "مدرسه",
+      "date": "",
+      "priority": "high",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-09-29"
+    },
+    {
+      "id": "alz2znyr",
+      "done": true,
+      "created": "2026-10-03",
+      "title": "بررسی آزمون جامعه شناسی",
+      "cat": "",
+      "date": "",
+      "priority": "medium",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-03"
+    },
+    {
+      "id": "duob7h2r",
+      "done": false,
+      "created": "2026-10-04",
+      "title": "مطالعه زبان برای امتحان",
+      "cat": "دیپلم",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null
+    },
+    {
+      "id": "2v1hkib0",
+      "done": true,
+      "created": "2026-10-04",
+      "title": "مطالعه ماز یار",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "high",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "xvfngmam",
+      "done": true,
+      "created": "2026-10-05",
+      "title": "تنظیم مرورگر",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-05"
+    },
+    {
+      "id": "yabb4ga1",
+      "done": true,
+      "created": "2026-10-05",
+      "title": "سوال برای نوشتن روی پی دی اف",
+      "cat": "",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-05"
+    },
+    {
+      "id": "6h83urzk",
+      "done": true,
+      "created": "2026-10-06",
+      "title": "دانلود اینستاگرام",
+      "cat": "درس",
+      "date": "",
+      "priority": "medium",
+      "status": "queued",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-08"
+    },
+    {
+      "id": "6ltbgbhv",
+      "done": true,
+      "created": "2026-10-06",
+      "title": "نوشتن نکات درسی",
+      "cat": "درس",
+      "date": "",
+      "priority": "medium",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-10"
+    },
+    {
+      "id": "4zu565yi",
+      "title": "تحقیق درباره اسم سطوح دانشگاهی خارجی",
+      "cat": "تحقیق",
+      "date": "",
+      "priority": "low",
+      "status": "queued",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-09",
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "q0uupb18",
+      "title": "آپدیت جدید لایف پلنر",
+      "cat": "پروژه",
+      "date": "",
+      "priority": "high",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-09",
+      "color": null,
+      "doneDate": "2026-10-20"
+    },
+    {
+      "id": "cwrfcj6x",
+      "done": true,
+      "created": "2026-10-10",
+      "title": "دیدن تحلیل های آزمون ماز",
+      "cat": "درس",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-11"
+    },
+    {
+      "id": "4ne2fm43",
+      "title": "دانلود برنامه مدیتیشن آرامیا",
+      "cat": "",
+      "date": "",
+      "priority": "medium",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-11",
+      "color": null,
+      "doneDate": "2026-10-11"
+    },
+    {
+      "id": "3bj844tl",
+      "title": "دیدن دوره رایگان بدون بهانه فقط نتیجه",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "medium",
+      "status": "queued",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": false,
+      "created": "2026-10-11",
+      "color": null
+    },
+    {
+      "id": "jjezw8hi",
+      "done": true,
+      "created": "2026-10-12",
+      "title": "دیدن تحلیل های آزمون",
+      "cat": "درس",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "iaqaseju",
+      "title": "غربالگری",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "high",
+      "status": "paused",
+      "est": "15",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-12",
+      "color": null,
+      "doneDate": "2026-10-13"
+    },
+    {
+      "id": "vj6an88w",
+      "title": "پیدا کردن شورت کات استیکر داخل لپ تاپ",
+      "cat": "لپ تاپ",
+      "date": "",
+      "priority": "high",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-12",
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "28uivm9f",
+      "title": "تحلیل آزمون زبان",
+      "cat": "درس",
+      "date": "",
+      "priority": "high",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-12",
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "og6vs7cg",
+      "title": "پیدا کردن روش ادغام پی دی اف و ویرایش",
+      "cat": "لپ تاپ",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-12",
+      "color": null,
+      "doneDate": "2026-10-12"
+    },
+    {
+      "id": "45xivg7k",
+      "title": "تنظیم بیو گرافی شاعرانه",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "low",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": false,
+      "created": "2026-10-12",
+      "color": null
+    },
+    {
+      "id": "y1yscij8",
+      "done": false,
+      "created": "2026-10-13",
+      "title": "دیدن دوره جان سخت",
+      "cat": "شخصی",
+      "date": "",
+      "priority": "low",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "color": null
+    },
+    {
+      "id": "d96f4vtk",
+      "title": "بلنک علوم و فنون",
+      "cat": "درس",
+      "date": "",
+      "priority": "high",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-13",
+      "color": null,
+      "doneDate": "2026-10-14"
+    },
+    {
+      "id": "9y1qai7y",
+      "title": "بک آپ برای آماده سازی لپ تاپ",
+      "cat": "",
+      "date": "",
+      "priority": "low",
+      "status": "notstarted",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": false,
+      "created": "2026-10-13",
+      "color": null
+    },
+    {
+      "id": "oxtbt2ug",
+      "title": "تحلیل عربی",
+      "cat": "درس",
+      "date": "",
+      "priority": "critical",
+      "status": "inprogress",
+      "est": "",
+      "note": "",
+      "extraDeadlines": [],
+      "subtasks": [],
+      "inbox": false,
+      "done": true,
+      "created": "2026-10-13",
+      "color": null,
+      "doneDate": "2026-10-14"
+    }
+  ],
+  "habits": [],
+  "goals": [
+    {
+      "id": "ze82d76w",
+      "title": "رسیدن به سطح C1",
+      "level": "life",
+      "progress": 9
+    }
+  ],
+  "notes": [],
+  "events": [
+    {
+      "id": "e6gn71or",
+      "title": "عربی",
+      "days": [
+        0
+      ],
+      "startMin": 1005,
+      "endMin": 1095,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 16,
+      "endHour": 18,
+      "desc": ""
+    },
+    {
+      "id": "a25hxhql",
+      "title": "جامعه شناسی",
+      "days": [
+        1
+      ],
+      "startMin": 1215,
+      "endMin": 1305,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 20,
+      "endHour": 21,
+      "desc": ""
+    },
+    {
+      "id": "uplembqf",
+      "title": "علوم و فنون ادبی",
+      "days": [
+        3
+      ],
+      "startMin": 1110,
+      "endMin": 1200,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 18,
+      "endHour": 20,
+      "desc": ""
+    },
+    {
+      "id": "n6uk2nia",
+      "title": "ریاضی و آمار",
+      "days": [
+        3
+      ],
+      "startMin": 1320,
+      "endMin": 1395,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 22,
+      "endHour": 23,
+      "desc": ""
+    },
+    {
+      "id": "hyl1ehi2",
+      "title": "مدرسه",
+      "days": [
+        0,
+        1,
+        3
+      ],
+      "startMin": 420,
+      "endMin": 840,
+      "reminder": false,
+      "cat": "pelyavql",
+      "color": null,
+      "startHour": 7,
+      "endHour": 14,
+      "desc": ""
+    },
+    {
+      "id": "net9uqey",
+      "title": "منطق",
+      "desc": "",
+      "days": [
+        2
+      ],
+      "startMin": 1110,
+      "endMin": 1200,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 18,
+      "endHour": 20
+    },
+    {
+      "id": "wid5o430",
+      "title": "مدرسه",
+      "desc": "",
+      "days": [
+        4
+      ],
+      "startMin": 420,
+      "endMin": 780,
+      "reminder": false,
+      "cat": "pelyavql",
+      "color": null,
+      "startHour": 7,
+      "endHour": 13
+    },
+    {
+      "id": "945bweic",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        0
+      ],
+      "startMin": 1215,
+      "endMin": 1305,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 20,
+      "endHour": 21
+    },
+    {
+      "id": "8dzgjmn1",
+      "title": "فارسی",
+      "desc": "",
+      "days": [
+        2
+      ],
+      "startMin": 1005,
+      "endMin": 1095,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 16,
+      "endHour": 18
+    },
+    {
+      "id": "qocaqe9g",
+      "title": "دینی",
+      "desc": "",
+      "days": [
+        3
+      ],
+      "startMin": 1005,
+      "endMin": 1095,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 16,
+      "endHour": 18
+    },
+    {
+      "id": "7si59vp6",
+      "title": "اقتصاد",
+      "desc": "",
+      "days": [
+        4
+      ],
+      "startMin": 1005,
+      "endMin": 1095,
+      "reminder": false,
+      "cat": "pchf4byi",
+      "color": null,
+      "startHour": 16,
+      "endHour": 18
+    },
+    {
+      "id": "qjxyetkm",
+      "title": "مدرسه",
+      "desc": "",
+      "days": [
+        2
+      ],
+      "startMin": 420,
+      "endMin": 780,
+      "reminder": false,
+      "cat": "pelyavql",
+      "color": null,
+      "startHour": 7,
+      "endHour": 13
+    },
+    {
+      "id": "gns1x5q8",
+      "title": "عربی",
+      "desc": "🟢ص 10 تا 16",
+      "days": [
+        4
+      ],
+      "startMin": 1095,
+      "endMin": 1155,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 18,
+      "endHour": 19
+    },
+    {
+      "id": "mgz6112a",
+      "title": "تاریخ",
+      "desc": "🟢ص 9 تا 19",
+      "days": [
+        4
+      ],
+      "startMin": 1155,
+      "endMin": 1215,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 19,
+      "endHour": 20
+    },
+    {
+      "id": "fmo4zrq2",
+      "title": "جغرافیا",
+      "desc": "🟢ص 8 تا 9",
+      "days": [
+        4
+      ],
+      "startMin": 1215,
+      "endMin": 1275,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 20,
+      "endHour": 21
+    },
+    {
+      "id": "ez905knc",
+      "title": "جامعه شناسی",
+      "desc": "🟢ص 15 تا 18",
+      "days": [
+        4
+      ],
+      "startMin": 1275,
+      "endMin": 1335,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 21,
+      "endHour": 22
+    },
+    {
+      "id": "wch1g079",
+      "title": "تاریخ",
+      "desc": "🟢20 تا 23",
+      "days": [
+        4
+      ],
+      "startMin": 1335,
+      "endMin": 1395,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 22,
+      "endHour": 23
+    },
+    {
+      "id": "s1gb0o03",
+      "title": "منطق",
+      "desc": "🟢ص 11 تا 15",
+      "days": [
+        4
+      ],
+      "startMin": 1395,
+      "endMin": 1455,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 23,
+      "endHour": 24
+    },
+    {
+      "id": "7bcpyoek",
+      "title": "ریاضی",
+      "desc": "🟢9 تا 18",
+      "days": [
+        5
+      ],
+      "startMin": 15,
+      "endMin": 75,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 0,
+      "endHour": 1
+    },
+    {
+      "id": "rouht0zl",
+      "title": "ریاضی",
+      "desc": "🟢ص 19 تا 22",
+      "days": [
+        5
+      ],
+      "startMin": 660,
+      "endMin": 720,
+      "reminder": false,
+      "cat": "hbrk8c6e",
+      "color": null,
+      "startHour": 11,
+      "endHour": 12
+    },
+    {
+      "id": "na4lwlo9",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        4
+      ],
+      "startMin": 900,
+      "endMin": 990,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 15,
+      "endHour": 16
+    },
+    {
+      "id": "2elffu31",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        5
+      ],
+      "startMin": 720,
+      "endMin": 810,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 12,
+      "endHour": 13
+    },
+    {
+      "id": "gvc0frcl",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        6
+      ],
+      "startMin": 795,
+      "endMin": 885,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 13,
+      "endHour": 14
+    },
+    {
+      "id": "561eqpb1",
+      "title": "آزمون ماز",
+      "desc": "",
+      "days": [
+        6
+      ],
+      "startMin": 660,
+      "endMin": 780,
+      "reminder": false,
+      "cat": "9jpivgdr",
+      "color": null,
+      "startHour": 11,
+      "endHour": 13
+    },
+    {
+      "id": "1dmidv07",
+      "title": "تحلیل",
+      "desc": "🟢تحلیل آزمون ماز",
+      "days": [
+        6
+      ],
+      "startMin": 900,
+      "endMin": 1080,
+      "reminder": false,
+      "cat": "chyag6wt",
+      "color": null,
+      "startHour": 15,
+      "endHour": 18
+    },
+    {
+      "id": "qumdnrmk",
+      "title": "عربی",
+      "desc": "🟢بلنک",
+      "days": [
+        5
+      ],
+      "startMin": 810,
+      "endMin": 870,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 13,
+      "endHour": 14
+    },
+    {
+      "id": "03mx0mwn",
+      "title": "جامعه شناسی",
+      "desc": "🟢درس 5",
+      "days": [
+        5
+      ],
+      "startMin": 870,
+      "endMin": 930,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 14,
+      "endHour": 15
+    },
+    {
+      "id": "zkkpfi3r",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        0
+      ],
+      "startMin": 915,
+      "endMin": 1005,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 15,
+      "endHour": 16
+    },
+    {
+      "id": "38l246zr",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        3
+      ],
+      "startMin": 915,
+      "endMin": 1005,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 15,
+      "endHour": 16
+    },
+    {
+      "id": "0orv2czs",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        2
+      ],
+      "startMin": 900,
+      "endMin": 990,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 15,
+      "endHour": 16
+    },
+    {
+      "id": "ddzbk9oc",
+      "title": "زبان",
+      "desc": "",
+      "days": [
+        1
+      ],
+      "startMin": 930,
+      "endMin": 1020,
+      "reminder": false,
+      "cat": "zwodx9y6",
+      "color": null,
+      "startHour": 15,
+      "endHour": 17
+    }
+  ],
+  "dayPlans": {},
+  "xp": 209,
+  "level": 17,
+  "history": {
+    "2026-07-28": {
+      "tasks": 3,
+      "habits": 2
+    },
+    "2026-07-29": {
+      "tasks": 0,
+      "habits": 2
+    },
+    "2026-07-30": {
+      "tasks": 1,
+      "habits": 2
+    },
+    "2026-07-31": {
+      "tasks": 4,
+      "habits": 3
+    },
+    "2026-08-01": {
+      "tasks": 1,
+      "habits": 3
+    },
+    "2026-08-02": {
+      "tasks": 2,
+      "habits": 2
+    },
+    "2026-08-03": {
+      "tasks": 3,
+      "habits": 4
+    },
+    "2026-08-04": {
+      "tasks": 0,
+      "habits": 1
+    },
+    "2026-08-11": {
+      "xp": 18,
+      "habits": 2
+    },
+    "2026-08-12": {
+      "xp": 310,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-08-13": {
+      "xp": 255,
+      "habits": 3,
+      "tasks": 1
+    },
+    "2026-08-14": {
+      "xp": 343,
+      "tasks": 1,
+      "habits": 3
+    },
+    "2026-08-15": {
+      "xp": 298,
+      "habits": 3,
+      "tasks": 1
+    },
+    "2026-08-16": {
+      "xp": 11,
+      "habits": 1
+    },
+    "2026-08-17": {
+      "xp": 330,
+      "habits": 2,
+      "tasks": 4
+    },
+    "2026-08-18": {
+      "xp": 85,
+      "habits": 2,
+      "tasks": 4
+    },
+    "2026-08-19": {
+      "xp": 168,
+      "habits": 3,
+      "tasks": 2
+    },
+    "2026-08-20": {
+      "xp": 52,
+      "habits": 2
+    },
+    "2026-08-21": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-08-22": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-08-23": {
+      "xp": 107,
+      "habits": 2,
+      "tasks": 1
+    },
+    "2026-08-24": {
+      "xp": 121,
+      "habits": 1
+    },
+    "2026-08-25": {
+      "xp": 329,
+      "habits": 1
+    },
+    "2026-08-26": {
+      "xp": 300,
+      "habits": 1
+    },
+    "2026-08-27": {
+      "xp": 6
+    },
+    "2026-08-28": {
+      "xp": 332,
+      "habits": 1,
+      "tasks": 1
+    },
+    "2026-08-29": {
+      "xp": 330,
+      "tasks": 2,
+      "habits": 1
+    },
+    "2026-08-30": {
+      "xp": 735,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-08-31": {
+      "xp": 99,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-09-01": {
+      "xp": 145,
+      "tasks": 1,
+      "habits": 1
+    },
+    "2026-09-02": {
+      "xp": 156,
+      "tasks": 2,
+      "habits": 1
+    },
+    "2026-09-03": {
+      "xp": 153,
+      "habits": 1
+    },
+    "2026-09-04": {
+      "xp": 140,
+      "habits": 1
+    },
+    "2026-09-05": {
+      "xp": 25,
+      "tasks": 1
+    },
+    "2026-09-06": {
+      "xp": 55,
+      "tasks": 3
+    },
+    "2026-09-07": {
+      "xp": 18,
+      "tasks": 1
+    },
+    "2026-09-08": {
+      "xp": 132,
+      "habits": 1,
+      "tasks": 1
+    },
+    "2026-09-09": {
+      "xp": 176,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-09-10": {
+      "xp": 6,
+      "habits": 1
+    },
+    "2026-09-11": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-09-13": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-09-14": {
+      "xp": 291,
+      "habits": 5,
+      "tasks": 2
+    },
+    "2026-09-15": {
+      "xp": 453,
+      "habits": 5
+    },
+    "2026-09-16": {
+      "xp": 52,
+      "habits": 5
+    },
+    "2026-09-17": {
+      "xp": 6,
+      "habits": 1
+    },
+    "2026-09-18": {
+      "xp": 113,
+      "habits": 2,
+      "tasks": 4
+    },
+    "2026-09-19": {
+      "xp": 129,
+      "habits": 3
+    },
+    "2026-09-20": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-09-21": {
+      "xp": 67,
+      "habits": 2,
+      "tasks": 1
+    },
+    "2026-09-22": {
+      "xp": 49,
+      "tasks": 1
+    },
+    "2026-09-23": {
+      "xp": 129,
+      "tasks": 1,
+      "habits": 2
+    },
+    "2026-09-24": {
+      "xp": 951,
+      "habits": 1
+    },
+    "2026-09-25": {
+      "xp": 513,
+      "habits": 2
+    },
+    "2026-09-26": {
+      "xp": 441,
+      "tasks": 2,
+      "habits": 2
+    },
+    "2026-09-27": {
+      "xp": 217,
+      "habits": 1
+    },
+    "2026-09-28": {
+      "xp": 852,
+      "habits": 1
+    },
+    "2026-09-29": {
+      "xp": 486,
+      "habits": 1,
+      "tasks": 1
+    },
+    "2026-09-30": {
+      "xp": 6,
+      "habits": 1
+    },
+    "2026-10-01": {
+      "xp": 1201,
+      "habits": 1
+    },
+    "2026-10-02": {
+      "xp": 771,
+      "tasks": 2
+    },
+    "2026-10-03": {
+      "xp": 840,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-10-04": {
+      "xp": 12,
+      "habits": 2
+    },
+    "2026-10-05": {
+      "xp": 86,
+      "habits": 1,
+      "tasks": 2
+    },
+    "2026-10-08": {
+      "xp": 12,
+      "tasks": 1
+    },
+    "2026-10-10": {
+      "xp": 12,
+      "tasks": 1
+    },
+    "2026-10-11": {
+      "xp": 116,
+      "tasks": 5
+    },
+    "2026-10-12": {
+      "xp": 142,
+      "tasks": 6
+    },
+    "2026-10-13": {
+      "xp": 18,
+      "tasks": 1
+    },
+    "2026-10-14": {
+      "xp": 58,
+      "tasks": 2
+    },
+    "2026-10-20": {
+      "xp": 42,
+      "tasks": 3
+    }
+  },
+  "quest": {
+    "current": null,
+    "nextAt": 1792511435805,
+    "waitStart": 1792511135805,
+    "bags": {
+      "normal": [
+        "n13",
+        "n1",
+        "n7",
+        "n14",
+        "n5",
+        "n16",
+        "n6",
+        "n8",
+        "n3",
+        "n2",
+        "n15",
+        "n4",
+        "n10",
+        "n12",
+        "n11"
+      ],
+      "easy": [
+        "e13",
+        "e16"
+      ],
+      "rare": [
+        "r1",
+        "r2"
+      ],
+      "epic": [
+        "ep1",
+        "ep3"
+      ]
+    },
+    "leave": true
+  },
+  "stats": {
+    "tasksCompleted": 81,
+    "questsCompleted": 126,
+    "bestStreak": 24,
+    "perfectDays": 6,
+    "questsCompletedByDate": {
+      "2026-08-01": 1,
+      "2026-08-02": 7,
+      "2026-08-03": 6,
+      "2026-08-12": 3,
+      "2026-08-13": 4,
+      "2026-08-14": 4,
+      "2026-08-16": 1,
+      "2026-08-17": 7,
+      "2026-08-19": 3,
+      "2026-08-23": 5,
+      "2026-08-24": 12,
+      "2026-08-25": 4,
+      "2026-08-27": 1,
+      "2026-08-28": 3,
+      "2026-08-29": 9,
+      "2026-08-30": 9,
+      "2026-08-31": 3,
+      "2026-09-01": 3,
+      "2026-09-04": 1,
+      "2026-09-06": 2,
+      "2026-09-09": 2,
+      "2026-09-14": 5,
+      "2026-09-15": 3,
+      "2026-09-16": 1,
+      "2026-09-18": 3,
+      "2026-09-19": 4,
+      "2026-09-21": 5,
+      "2026-09-22": 3,
+      "2026-09-23": 1,
+      "2026-09-24": 2,
+      "2026-09-25": 3
+    },
+    "totalXPEarned": 13711,
+    "weeklyPerfectUnlocked": true
+  },
+  "pomodoro": {
+    "settings": {
+      "focusMin": 15,
+      "breakMin": 3,
+      "longBreakMin": 30,
+      "cycleCount": 4,
+      "goalMinutes": 120
+    },
+    "session": null,
+    "history": {
+      "2026-07-31": {
+        "focus": 20,
+        "break": 0
+      },
+      "2026-08-02": {
+        "focus": 30,
+        "break": 0
+      },
+      "2026-08-03": {
+        "focus": 29,
+        "break": 0
+      },
+      "2026-08-04": {
+        "focus": 1,
+        "break": 0
+      },
+      "2026-08-12": {
+        "focus": 47,
+        "break": 0,
+        "sessions": 6
+      },
+      "2026-08-13": {
+        "focus": 31,
+        "break": 5,
+        "sessions": 4
+      },
+      "2026-08-14": {
+        "focus": 30,
+        "break": 0,
+        "sessions": 2
+      },
+      "2026-08-15": {
+        "focus": 100,
+        "break": 0,
+        "sessions": 3,
+        "goalAwarded": true
+      },
+      "2026-08-17": {
+        "focus": 46,
+        "break": 0,
+        "sessions": 3,
+        "goalAwarded": true
+      },
+      "2026-08-19": {
+        "focus": 16,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-08-25": {
+        "focus": 153,
+        "break": 55,
+        "sessions": 5,
+        "goalAwarded": true
+      },
+      "2026-08-23": {
+        "focus": 159,
+        "break": 0,
+        "sessions": 2
+      },
+      "2026-08-24": {
+        "focus": 150,
+        "break": 20,
+        "sessions": 1
+      },
+      "2026-08-26": {
+        "focus": 120,
+        "break": 0,
+        "sessions": 4,
+        "goalAwarded": true
+      },
+      "2026-08-28": {
+        "focus": 61,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-08-29": {
+        "focus": 34,
+        "break": 3,
+        "sessions": 4
+      },
+      "2026-08-30": {
+        "focus": 166,
+        "break": 22,
+        "sessions": 9,
+        "goalAwarded": true
+      },
+      "2026-08-31": {
+        "focus": 21,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-01": {
+        "focus": 30,
+        "break": 9,
+        "sessions": 2
+      },
+      "2026-09-02": {
+        "focus": 40,
+        "break": 10,
+        "sessions": 1
+      },
+      "2026-09-03": {
+        "focus": 47,
+        "break": 14,
+        "sessions": 1
+      },
+      "2026-09-04": {
+        "focus": 39,
+        "break": 14,
+        "sessions": 1
+      },
+      "2026-09-08": {
+        "focus": 42,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-09": {
+        "focus": 45,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-14": {
+        "focus": 66,
+        "break": 8,
+        "sessions": 2
+      },
+      "2026-09-15": {
+        "focus": 133,
+        "break": 11,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-09-18": {
+        "focus": 11,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-19": {
+        "focus": 31,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-23": {
+        "focus": 31,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-24": {
+        "focus": 345,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-09-25": {
+        "focus": 172,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-09-26": {
+        "focus": 137,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-09-27": {
+        "focus": 81,
+        "break": 0,
+        "sessions": 1
+      },
+      "2026-09-28": {
+        "focus": 314,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-09-29": {
+        "focus": 166,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-10-01": {
+        "focus": 448,
+        "break": 0,
+        "sessions": 2,
+        "goalAwarded": true
+      },
+      "2026-10-02": {
+        "focus": 258,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      },
+      "2026-10-03": {
+        "focus": 300,
+        "break": 0,
+        "sessions": 1,
+        "goalAwarded": true
+      }
+    },
+    "pendingNext": null,
+    "manualData": [
+      {
+        "id": "inange44",
+        "kind": "focus",
+        "minutes": 51,
+        "date": "2026-08-23",
+        "note": "زبان - آمادگی برای دیپلم",
+        "createdAt": 1787493461820,
+        "migratedToHistory": true
+      },
+      {
+        "id": "jhsekbz1",
+        "kind": "focus",
+        "minutes": 108,
+        "date": "2026-08-23",
+        "note": "زبان - آکسفورد دیپلم",
+        "createdAt": 1787509531509,
+        "migratedToHistory": true
+      },
+      {
+        "id": "m6rdaahd",
+        "kind": "focus",
+        "minutes": 150,
+        "date": "2026-08-24",
+        "note": "زبان - آکسفورد دیپلم",
+        "createdAt": 1787591271988,
+        "migratedToHistory": true
+      },
+      {
+        "id": "pwmidgcf",
+        "kind": "break",
+        "minutes": 20,
+        "date": "2026-08-24",
+        "note": "",
+        "createdAt": 1787591287346,
+        "migratedToHistory": true
+      },
+      {
+        "id": "xlv5vlmo",
+        "kind": "focus",
+        "minutes": 69,
+        "date": "2026-08-25",
+        "note": "",
+        "createdAt": 1787670482819,
+        "migratedToHistory": true
+      },
+      {
+        "id": "xoqb6c7a",
+        "kind": "break",
+        "minutes": 55,
+        "date": "2026-08-25",
+        "note": "",
+        "createdAt": 1787670489936,
+        "migratedToHistory": true
+      },
+      {
+        "id": "cdvobh1g",
+        "kind": "focus",
+        "minutes": 81,
+        "date": "2026-08-25",
+        "note": "زبان - آکسفورد دیپلم",
+        "taskId": "",
+        "createdAt": 1787681060552,
+        "migratedToHistory": true
+      },
+      {
+        "id": "wn6we4qo",
+        "kind": "focus",
+        "minutes": 30,
+        "date": "2026-08-26",
+        "note": "زبان - تمرین گرامر",
+        "taskId": "",
+        "createdAt": 1787737076949,
+        "migratedToHistory": true
+      },
+      {
+        "id": "wfuj5p0r",
+        "kind": "focus",
+        "minutes": 53,
+        "date": "2026-08-26",
+        "note": "زبان - تمرین گرامر",
+        "taskId": "",
+        "createdAt": 1787750402829,
+        "migratedToHistory": true
+      },
+      {
+        "id": "xli8b1z4",
+        "kind": "focus",
+        "minutes": 36,
+        "date": "2026-08-26",
+        "note": "زبان - تمرین سپیکینگ",
+        "taskId": "",
+        "createdAt": 1787759456102,
+        "migratedToHistory": true
+      },
+      {
+        "id": "9bb22itt",
+        "kind": "focus",
+        "minutes": 61,
+        "date": "2026-08-28",
+        "note": "زبان - تست تعیین سطح",
+        "taskId": "",
+        "createdAt": 1787906131774,
+        "migratedToHistory": true
+      },
+      {
+        "id": "pio7niwp",
+        "kind": "focus",
+        "minutes": 40,
+        "date": "2026-09-02",
+        "note": "زبان - پایان ترم",
+        "taskId": "",
+        "createdAt": 1788371353114,
+        "migratedToHistory": true
+      },
+      {
+        "id": "9sqxxpu8",
+        "kind": "break",
+        "minutes": 10,
+        "date": "2026-09-02",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1788371361676,
+        "migratedToHistory": true
+      },
+      {
+        "id": "egl7dsph",
+        "kind": "focus",
+        "minutes": 47,
+        "date": "2026-09-03",
+        "note": "زبان - گرامر",
+        "taskId": "",
+        "createdAt": 1788450598866,
+        "migratedToHistory": true
+      },
+      {
+        "id": "5srrtagg",
+        "kind": "break",
+        "minutes": 14,
+        "date": "2026-09-03",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1788450606332,
+        "migratedToHistory": true
+      },
+      {
+        "id": "v31nyzei",
+        "kind": "focus",
+        "minutes": 39,
+        "date": "2026-09-04",
+        "note": "زبان - مرور",
+        "taskId": "",
+        "createdAt": 1788552476288,
+        "migratedToHistory": true
+      },
+      {
+        "id": "1kjkmci8",
+        "kind": "break",
+        "minutes": 14,
+        "date": "2026-09-04",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1788552485069,
+        "migratedToHistory": true
+      },
+      {
+        "id": "c8vbiqyx",
+        "kind": "focus",
+        "minutes": 42,
+        "date": "2026-09-08",
+        "note": "زبان - تست تعیین سطح",
+        "taskId": "",
+        "createdAt": 1788868715802,
+        "migratedToHistory": true
+      },
+      {
+        "id": "e4oi049t",
+        "kind": "focus",
+        "minutes": 45,
+        "date": "2026-09-09",
+        "note": "زبان - آکسفورد",
+        "taskId": "",
+        "createdAt": 1788941846697,
+        "migratedToHistory": true
+      },
+      {
+        "id": "jfnhddsk",
+        "kind": "focus",
+        "minutes": 12,
+        "date": "2026-09-14",
+        "note": "زبان - آکسفورد",
+        "taskId": "",
+        "createdAt": 1789404016471,
+        "migratedToHistory": true
+      },
+      {
+        "id": "p8ht3dmp",
+        "kind": "focus",
+        "minutes": 54,
+        "date": "2026-09-14",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789414279586,
+        "migratedToHistory": true
+      },
+      {
+        "id": "bnytjbr6",
+        "kind": "break",
+        "minutes": 8,
+        "date": "2026-09-14",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789414287815,
+        "migratedToHistory": true
+      },
+      {
+        "id": "zkr17gt1",
+        "kind": "focus",
+        "minutes": 133,
+        "date": "2026-09-15",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789487740354,
+        "migratedToHistory": true
+      },
+      {
+        "id": "vqs361zx",
+        "kind": "break",
+        "minutes": 11,
+        "date": "2026-09-15",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789487761071,
+        "migratedToHistory": true
+      },
+      {
+        "id": "6rigbrqo",
+        "kind": "focus",
+        "minutes": 11,
+        "date": "2026-09-18",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789760668558,
+        "migratedToHistory": true
+      },
+      {
+        "id": "zxav9hsa",
+        "kind": "focus",
+        "minutes": 31,
+        "date": "2026-09-19",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1789809262930,
+        "migratedToHistory": true
+      },
+      {
+        "id": "q1hrzxij",
+        "kind": "focus",
+        "minutes": 31,
+        "date": "2026-09-23",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790193850978,
+        "migratedToHistory": true
+      },
+      {
+        "id": "5k8fltu9",
+        "kind": "focus",
+        "minutes": 345,
+        "date": "2026-09-24",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790270395167,
+        "migratedToHistory": true
+      },
+      {
+        "id": "35f7j13e",
+        "kind": "focus",
+        "minutes": 172,
+        "date": "2026-09-25",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790355259371,
+        "migratedToHistory": true
+      },
+      {
+        "id": "7l543k0n",
+        "kind": "focus",
+        "minutes": 137,
+        "date": "2026-09-26",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790453039870,
+        "migratedToHistory": true
+      },
+      {
+        "id": "1wyh38mu",
+        "kind": "focus",
+        "minutes": 81,
+        "date": "2026-09-27",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790536362854,
+        "migratedToHistory": true
+      },
+      {
+        "id": "jrgs529d",
+        "kind": "focus",
+        "minutes": 314,
+        "date": "2026-09-28",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790627251436,
+        "migratedToHistory": true
+      },
+      {
+        "id": "ac3ab46w",
+        "kind": "focus",
+        "minutes": 166,
+        "date": "2026-09-29",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790712225219,
+        "migratedToHistory": true
+      },
+      {
+        "id": "zjg5dfyv",
+        "kind": "focus",
+        "minutes": 170,
+        "date": "2026-10-01",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790840872055,
+        "migratedToHistory": true
+      },
+      {
+        "id": "wvqehbfc",
+        "kind": "focus",
+        "minutes": 278,
+        "date": "2026-10-01",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790878331830,
+        "migratedToHistory": true
+      },
+      {
+        "id": "wu2ddg8h",
+        "kind": "focus",
+        "minutes": 258,
+        "date": "2026-10-02",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1790968127706,
+        "migratedToHistory": true
+      },
+      {
+        "id": "0fsrdljc",
+        "kind": "focus",
+        "minutes": 300,
+        "date": "2026-10-03",
+        "note": "",
+        "taskId": "",
+        "createdAt": 1791058586674,
+        "migratedToHistory": true
+      }
+    ],
+    "sessionHistory": [
+      {
+        "id": "0fsrdljc",
+        "date": "2026-10-03",
+        "mode": "focus",
+        "minutes": 300,
+        "plannedMinutes": 300,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1791040586674,
+        "endedAt": 1791058586674,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "wu2ddg8h",
+        "date": "2026-10-02",
+        "mode": "focus",
+        "minutes": 258,
+        "plannedMinutes": 258,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790952647706,
+        "endedAt": 1790968127706,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "wvqehbfc",
+        "date": "2026-10-01",
+        "mode": "focus",
+        "minutes": 278,
+        "plannedMinutes": 278,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790861651830,
+        "endedAt": 1790878331830,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "zjg5dfyv",
+        "date": "2026-10-01",
+        "mode": "focus",
+        "minutes": 170,
+        "plannedMinutes": 170,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790830672055,
+        "endedAt": 1790840872055,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "ac3ab46w",
+        "date": "2026-09-29",
+        "mode": "focus",
+        "minutes": 166,
+        "plannedMinutes": 166,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790702265220,
+        "endedAt": 1790712225220,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "jrgs529d",
+        "date": "2026-09-28",
+        "mode": "focus",
+        "minutes": 314,
+        "plannedMinutes": 314,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790608411436,
+        "endedAt": 1790627251436,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "1wyh38mu",
+        "date": "2026-09-27",
+        "mode": "focus",
+        "minutes": 81,
+        "plannedMinutes": 81,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790531502854,
+        "endedAt": 1790536362854,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "7l543k0n",
+        "date": "2026-09-26",
+        "mode": "focus",
+        "minutes": 137,
+        "plannedMinutes": 137,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790444819870,
+        "endedAt": 1790453039870,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "35f7j13e",
+        "date": "2026-09-25",
+        "mode": "focus",
+        "minutes": 172,
+        "plannedMinutes": 172,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790344939371,
+        "endedAt": 1790355259372,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "5k8fltu9",
+        "date": "2026-09-24",
+        "mode": "focus",
+        "minutes": 345,
+        "plannedMinutes": 345,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790249695167,
+        "endedAt": 1790270395167,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "q1hrzxij",
+        "date": "2026-09-23",
+        "mode": "focus",
+        "minutes": 31,
+        "plannedMinutes": 31,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1790191990978,
+        "endedAt": 1790193850978,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "zxav9hsa",
+        "date": "2026-09-19",
+        "mode": "focus",
+        "minutes": 31,
+        "plannedMinutes": 31,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1789807402930,
+        "endedAt": 1789809262930,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "6rigbrqo",
+        "date": "2026-09-18",
+        "mode": "focus",
+        "minutes": 11,
+        "plannedMinutes": 11,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1789760008558,
+        "endedAt": 1789760668558,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "zkr17gt1",
+        "date": "2026-09-15",
+        "mode": "focus",
+        "minutes": 133,
+        "plannedMinutes": 133,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1789479760354,
+        "endedAt": 1789487740354,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "p8ht3dmp",
+        "date": "2026-09-14",
+        "mode": "focus",
+        "minutes": 54,
+        "plannedMinutes": 54,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1789411039586,
+        "endedAt": 1789414279586,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "jfnhddsk",
+        "date": "2026-09-14",
+        "mode": "focus",
+        "minutes": 12,
+        "plannedMinutes": 12,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1789403296472,
+        "endedAt": 1789404016472,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آکسفورد",
+        "source": "manual"
+      },
+      {
+        "id": "e4oi049t",
+        "date": "2026-09-09",
+        "mode": "focus",
+        "minutes": 45,
+        "plannedMinutes": 45,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788939146697,
+        "endedAt": 1788941846697,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آکسفورد",
+        "source": "manual"
+      },
+      {
+        "id": "c8vbiqyx",
+        "date": "2026-09-08",
+        "mode": "focus",
+        "minutes": 42,
+        "plannedMinutes": 42,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788866195802,
+        "endedAt": 1788868715802,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - تست تعیین سطح",
+        "source": "manual"
+      },
+      {
+        "id": "v31nyzei",
+        "date": "2026-09-04",
+        "mode": "focus",
+        "minutes": 39,
+        "plannedMinutes": 39,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788550136288,
+        "endedAt": 1788552476288,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - مرور",
+        "source": "manual"
+      },
+      {
+        "id": "egl7dsph",
+        "date": "2026-09-03",
+        "mode": "focus",
+        "minutes": 47,
+        "plannedMinutes": 47,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788447778866,
+        "endedAt": 1788450598866,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - گرامر",
+        "source": "manual"
+      },
+      {
+        "id": "pio7niwp",
+        "date": "2026-09-02",
+        "mode": "focus",
+        "minutes": 40,
+        "plannedMinutes": 40,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788368953114,
+        "endedAt": 1788371353114,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - پایان ترم",
+        "source": "manual"
+      },
+      {
+        "id": "2jkcwbwt",
+        "date": "2026-09-01",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 3,
+        "roundNum": 1,
+        "startedAt": 1788274191220,
+        "endedAt": 1788275688201,
+        "pauseCount": 3,
+        "score": 84,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "55720nbz",
+        "date": "2026-09-01",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788272689014,
+        "endedAt": 1788273589149,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "r3f0i9zg",
+        "date": "2026-08-31",
+        "mode": "focus",
+        "minutes": 21,
+        "plannedMinutes": 45,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788169863503,
+        "endedAt": 1788171287845,
+        "pauseCount": 1,
+        "score": 66,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "iqy9u8gm",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 38,
+        "plannedMinutes": 45,
+        "taskId": "",
+        "sessionNum": 2,
+        "roundNum": 1,
+        "startedAt": 1788105248301,
+        "endedAt": 1788108357289,
+        "pauseCount": 3,
+        "score": 71,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "9dx43fn0",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 45,
+        "plannedMinutes": 45,
+        "taskId": "",
+        "sessionNum": 2,
+        "roundNum": 1,
+        "startedAt": 1788099482341,
+        "endedAt": 1788102802815,
+        "pauseCount": 1,
+        "score": 98,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "acwgh196",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788097967597,
+        "endedAt": 1788098933896,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "z5fu2tdx",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 6,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 3,
+        "roundNum": 1,
+        "startedAt": 1788088786434,
+        "endedAt": 1788090893785,
+        "pauseCount": 1,
+        "score": 63,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "ex7s67in",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 2,
+        "roundNum": 1,
+        "startedAt": 1788087586764,
+        "endedAt": 1788088486836,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "w68ebpcx",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788086481653,
+        "endedAt": 1788087381822,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "4a5d5h0y",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 2,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 3,
+        "roundNum": 1,
+        "startedAt": 1788078108595,
+        "endedAt": 1788078232754,
+        "pauseCount": 0,
+        "score": 57,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "b8j9vl1v",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 2,
+        "roundNum": 1,
+        "startedAt": 1788077073012,
+        "endedAt": 1788077973374,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "4jy3n7ef",
+        "date": "2026-08-30",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1788075247230,
+        "endedAt": 1788076346837,
+        "pauseCount": 2,
+        "score": 91,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "oynfa7ks",
+        "date": "2026-08-29",
+        "mode": "focus",
+        "minutes": 8,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 2,
+        "roundNum": 1,
+        "startedAt": 1788000185772,
+        "endedAt": 1788000783241,
+        "pauseCount": 2,
+        "score": 63,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "y39jlwmj",
+        "date": "2026-08-29",
+        "mode": "focus",
+        "minutes": 15,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1787998957562,
+        "endedAt": 1787999957173,
+        "pauseCount": 1,
+        "score": 98,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "zuadyqua",
+        "date": "2026-08-29",
+        "mode": "focus",
+        "minutes": 2,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1787995311227,
+        "endedAt": 1787995442687,
+        "pauseCount": 1,
+        "score": 50,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "gpy5v64m",
+        "date": "2026-08-29",
+        "mode": "focus",
+        "minutes": 9,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "sessionNum": 1,
+        "roundNum": 1,
+        "startedAt": 1787992710440,
+        "endedAt": 1787993422050,
+        "pauseCount": 3,
+        "score": 59,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "9bb22itt",
+        "date": "2026-08-28",
+        "mode": "focus",
+        "minutes": 61,
+        "plannedMinutes": 61,
+        "taskId": "",
+        "startedAt": 1787902471774,
+        "endedAt": 1787906131774,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - تست تعیین سطح",
+        "source": "manual"
+      },
+      {
+        "id": "3t5knddu",
+        "date": "2026-08-26",
+        "mode": "focus",
+        "minutes": 1,
+        "plannedMinutes": 15,
+        "taskId": "",
+        "startedAt": 1787759463297,
+        "endedAt": 1787759493744,
+        "pauseCount": 0,
+        "score": 55,
+        "note": "",
+        "source": "pomodoro"
+      },
+      {
+        "id": "xli8b1z4",
+        "date": "2026-08-26",
+        "mode": "focus",
+        "minutes": 36,
+        "plannedMinutes": 36,
+        "taskId": "",
+        "startedAt": 1787757296102,
+        "endedAt": 1787759456102,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - تمرین سپیکینگ",
+        "source": "manual"
+      },
+      {
+        "id": "wfuj5p0r",
+        "date": "2026-08-26",
+        "mode": "focus",
+        "minutes": 53,
+        "plannedMinutes": 53,
+        "taskId": "",
+        "startedAt": 1787747222829,
+        "endedAt": 1787750402829,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - تمرین گرامر",
+        "source": "manual"
+      },
+      {
+        "id": "wn6we4qo",
+        "date": "2026-08-26",
+        "mode": "focus",
+        "minutes": 30,
+        "plannedMinutes": 30,
+        "taskId": "",
+        "startedAt": 1787735276949,
+        "endedAt": 1787737076949,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - تمرین گرامر",
+        "source": "manual"
+      },
+      {
+        "id": "cdvobh1g",
+        "date": "2026-08-25",
+        "mode": "focus",
+        "minutes": 81,
+        "plannedMinutes": 81,
+        "taskId": "",
+        "startedAt": 1787676200552,
+        "endedAt": 1787681060552,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آکسفورد دیپلم",
+        "source": "manual"
+      },
+      {
+        "id": "xlv5vlmo",
+        "date": "2026-08-25",
+        "mode": "focus",
+        "minutes": 69,
+        "plannedMinutes": 69,
+        "taskId": "",
+        "startedAt": 1787670482819,
+        "endedAt": 1787670482819,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "",
+        "source": "manual"
+      },
+      {
+        "id": "m6rdaahd",
+        "date": "2026-08-24",
+        "mode": "focus",
+        "minutes": 150,
+        "plannedMinutes": 150,
+        "taskId": "",
+        "startedAt": 1787591271988,
+        "endedAt": 1787591271988,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آکسفورد دیپلم",
+        "source": "manual"
+      },
+      {
+        "id": "jhsekbz1",
+        "date": "2026-08-23",
+        "mode": "focus",
+        "minutes": 108,
+        "plannedMinutes": 108,
+        "taskId": "",
+        "startedAt": 1787509531509,
+        "endedAt": 1787509531509,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آکسفورد دیپلم",
+        "source": "manual"
+      },
+      {
+        "id": "inange44",
+        "date": "2026-08-23",
+        "mode": "focus",
+        "minutes": 51,
+        "plannedMinutes": 51,
+        "taskId": "",
+        "startedAt": 1787493461820,
+        "endedAt": 1787493461820,
+        "pauseCount": 0,
+        "score": 100,
+        "note": "زبان - آمادگی برای دیپلم",
+        "source": "manual"
+      },
+      {
+        "id": "bqfkfvtp",
+        "date": "2026-08-25",
+        "mode": "focus",
+        "minutes": 1,
+        "plannedMinutes": 1,
+        "taskId": "",
+        "startedAt": 1787672971400,
+        "endedAt": 1787673031869,
+        "pauseCount": 0,
+        "score": 100,
+        "note": ""
+      },
+      {
+        "id": "nunjff2h",
+        "date": "2026-08-25",
+        "mode": "focus",
+        "minutes": 1,
+        "plannedMinutes": 1,
+        "taskId": "",
+        "startedAt": 1787672920057,
+        "endedAt": 1787672950909,
+        "pauseCount": 0,
+        "score": 100,
+        "note": ""
+      },
+      {
+        "id": "cgt5lnv6",
+        "date": "2026-08-25",
+        "mode": "focus",
+        "minutes": 1,
+        "plannedMinutes": 45,
+        "taskId": "",
+        "startedAt": 1787670911865,
+        "endedAt": 1787670954214,
+        "pauseCount": 1,
+        "score": 48,
+        "note": ""
+      }
+    ],
+    "presets": [
+      {
+        "id": "classic",
+        "label": "کلاسیک",
+        "focus": 25,
+        "break": 5,
+        "icon": "🍅"
+      },
+      {
+        "id": "short",
+        "label": "کوتاه",
+        "focus": 15,
+        "break": 3,
+        "icon": "⚡"
+      },
+      {
+        "id": "deep",
+        "label": "دیپ فوکوس",
+        "focus": 50,
+        "break": 10,
+        "icon": "🧠"
+      },
+      {
+        "id": "study",
+        "label": "مطالعه",
+        "focus": 45,
+        "break": 10,
+        "icon": "📚"
+      },
+      {
+        "id": "custom",
+        "label": "سفارشی",
+        "focus": 30,
+        "break": 10,
+        "icon": "⚙️"
+      }
+    ],
+    "presetId": "short",
+    "sound": "off",
+    "notifications": true,
+    "focusStreak": 0,
+    "lastFocusDate": "2026-10-03",
+    "lastTaskId": "",
+    "soundVolume": 1,
+    "currentSession": 1,
+    "currentRound": 1,
+    "customPreset": {
+      "focus": 30,
+      "break": 10,
+      "saved": true
+    },
+    "autoStart": false
+  },
+  "dailyGoalProgress": {
+    "2026-08-01": {
+      "yytuzou2": 10
+    },
+    "2026-08-02": {
+      "yytuzou2": 30,
+      "4buwe2of": 10,
+      "61gn6gsf": 10,
+      "xn9vofgc": 10
+    },
+    "2026-08-03": {
+      "yytuzou2": 10,
+      "by3osst8": 10
+    },
+    "2026-08-11": {
+      "by3osst8": 80,
+      "yytuzou2": 10
+    },
+    "2026-08-12": {
+      "yytuzou2": 10
+    },
+    "2026-08-13": {
+      "by3osst8": 10
+    },
+    "2026-08-14": {
+      "923y2qnf": 20,
+      "by3osst8": 10
+    },
+    "2026-08-15": {
+      "923y2qnf": 10
+    },
+    "2026-08-17": {
+      "923y2qnf": 10
+    },
+    "2026-08-18": {
+      "by3osst8": 10,
+      "923y2qnf": 10
+    },
+    "2026-08-19": {
+      "by3osst8": 10,
+      "923y2qnf": 10
+    },
+    "2026-08-20": {
+      "by3osst8": 10
+    },
+    "2026-08-21": {
+      "923y2qnf": 10
+    },
+    "2026-08-23": {
+      "923y2qnf": 30
+    },
+    "2026-08-24": {
+      "923y2qnf": 10
+    },
+    "2026-08-25": {
+      "bow0r14d": 20,
+      "923y2qnf": 10
+    },
+    "2026-08-26": {
+      "923y2qnf": 20,
+      "bow0r14d": 10
+    },
+    "2026-08-27": {
+      "923y2qnf": 10
+    },
+    "2026-08-28": {
+      "bow0r14d": 10
+    },
+    "2026-08-29": {
+      "bow0r14d": 20,
+      "923y2qnf": 20
+    },
+    "2026-08-30": {
+      "923y2qnf": 20,
+      "bow0r14d": 10
+    },
+    "2026-09-02": {
+      "923y2qnf": 10
+    },
+    "2026-09-03": {
+      "923y2qnf": 10
+    },
+    "2026-09-04": {
+      "923y2qnf": 10
+    },
+    "2026-09-08": {
+      "923y2qnf": 10
+    },
+    "2026-09-09": {
+      "923y2qnf": 30
+    },
+    "2026-09-10": {
+      "ze82d76w": 60,
+      "1ekcfj49": 80,
+      "0ae4gvt5": 40
+    },
+    "2026-09-11": {
+      "1ekcfj49": 12,
+      "ze82d76w": 2,
+      "0ae4gvt5": 6
+    },
+    "2026-09-14": {
+      "3zesw9av": 2,
+      "8m9g11hw": 2
+    },
+    "2026-09-15": {
+      "vsyf0nqa": 128,
+      "3zesw9av": 4,
+      "ze82d76w": 2
+    },
+    "2026-09-16": {
+      "8m9g11hw": 22,
+      "3zesw9av": 2
+    },
+    "2026-09-25": {
+      "05qhu0io": 14
+    },
+    "2026-09-26": {
+      "05qhu0io": 46
+    },
+    "2026-10-01": {
+      "05qhu0io": 10
+    },
+    "2026-10-03": {
+      "05qhu0io": 10
+    },
+    "2026-10-21": {
+      "05qhu0io": 2
+    }
+  },
+  "perfectDayHistory": {
+    "2026-08-02": true,
+    "2026-08-12": true,
+    "2026-08-13": true,
+    "2026-08-14": true,
+    "2026-08-17": true,
+    "2026-08-30": true
+  },
+  "motivation": {
+    "mood": "calm",
+    "custom": "دست از طلب ندارم ، تا کام من برآید...\nتن رسد به جانان ، یا جان ز تن برآید..."
+  },
+  "xpWallet": 7011,
+  "xpBoost": {
+    "activeUntil": 1787907878797
+  },
+  "streakShields": 1,
+  "cityBonusItems": [
+    "building"
+  ],
+  "themes": {
+    "owned": [
+      "dark",
+      "light",
+      "legendaryGold",
+      "fireSunset",
+      "neonPurple"
+    ]
+  },
+  "lastBackupReminder": 1792502675966,
+  "skillPoints": 0,
+  "skillTiers": {
+    "pomoXp": 3,
+    "questXp": 3,
+    "shopDiscount": 2,
+    "luckyBox": 0,
+    "criticalBonus": 3,
+    "streakGuard": 0,
+    "questCooldown": 2
+  },
+  "boss": {
+    "active": null,
+    "nextAvailableAt": 1792843904045
+  },
+  "crisis": {
+    "active": false,
+    "deadlineAt": 1788080638171,
+    "cooldownUntil": 1788087857021
+  },
+  "newRecordFlags": {
+    "2026-08-11:xp": true,
+    "2026-08-12:pomoSessions": true,
+    "2026-08-12:xp": true,
+    "2026-08-12:pomoMin": true,
+    "2026-08-14:xp": true,
+    "2026-08-15:pomoMin": true,
+    "2026-08-24:quests": true,
+    "2026-08-30:pomoSessions": true,
+    "2026-08-30:xp": true,
+    "2026-08-30:pomoMin": true,
+    "2026-09-24:xp": true,
+    "2026-09-24:pomoMin": true,
+    "2026-10-01:xp": true,
+    "2026-10-01:pomoMin": true,
+    "2026-10-11:tasks": true,
+    "2026-10-12:tasks": true
+  },
+  "lastAutoBackupAt": 1792502674985,
+  "notifications": {
+    "enabled": true
+  },
+  "categories": [
+    {
+      "id": "zwodx9y6",
+      "name": "درس",
+      "color": "#8b6bff"
+    },
+    {
+      "id": "art0r7yv",
+      "name": "استراحت",
+      "color": "#2ee6a6"
+    },
+    {
+      "id": "ygfvyu7w",
+      "name": "زندگی",
+      "color": "#00e5ff"
+    },
+    {
+      "id": "cqgs56u5",
+      "name": "کلاس",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "nb3l11o6",
+      "name": "بیرون",
+      "color": "#f97316"
+    },
+    {
+      "id": "pchf4byi",
+      "name": "ماز",
+      "color": "#60a5fa"
+    },
+    {
+      "id": "pelyavql",
+      "name": "مدرسه",
+      "color": "#ffffff"
+    },
+    {
+      "id": "9jpivgdr",
+      "name": "آزمون",
+      "color": "#ff5470"
+    },
+    {
+      "id": "hbrk8c6e",
+      "name": "برنامه ماز",
+      "color": "#00ff00"
+    },
+    {
+      "id": "h82lzhao",
+      "name": "ماز (فوق برنامه)",
+      "color": "#0000ff"
+    },
+    {
+      "id": "chyag6wt",
+      "name": "تحلیل",
+      "color": "#ffff00"
+    }
+  ],
+  "streakShieldWeekly": {
+    "weekStart": 1789936200000,
+    "count": 1
+  },
+  "streakShieldHabits": [
+    "m0q95c5l",
+    "73nl8pyz",
+    "0d4x0voj",
+    "085qyy05",
+    "v53yfudl",
+    "mzbvoo9k"
+  ],
+  "streakShieldArmedAt": 1789996709713,
+  "streakShieldActive": false,
+  "uiSettings": {
+    "fontSize": "large",
+    "activeTheme": "legendaryGold",
+    "uiScale": "medium",
+    "pinnedNav": [
+      "dashboard",
+      "tasks",
+      "calendar"
+    ],
+    "pinnedNavCount": 3,
+    "pinnedNavExtra": [],
+    "perfMode": "0"
+  },
+  "dayPlanPrefs": {
+    "showDone": false,
+    "showLinked": false
+  },
+  "v19": {
+    "weekOffset": 0,
+    "dashCollapsed": {},
+    "pomoAutoStart": false,
+    "haptics": true,
+    "bossArchive": [],
+    "shopDailyDeal": {
+      "date": "2026-10-20",
+      "idx": 2
+    }
+  }
+}
