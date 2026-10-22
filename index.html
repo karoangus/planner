@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="rtl" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0f1115">
+  <meta name="theme-color" content="#0b0d12" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#f4f6fb" media="(prefers-color-scheme: light)">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="برنامهٔ مطالعه">
   <meta name="description" content="برنامه‌ریزی هفتگی زمان مطالعه و بودجهٔ تفریح">
@@ -13,85 +15,188 @@
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon-192.png">
   <style>
+    /* ============ تم ============ */
     :root {
-      --bg: #0f1115;
-      --surface: #171a21;
+      --bg: #0b0d12;
+      --bg-grad-1: rgba(124, 156, 255, .14);
+      --bg-grad-2: rgba(94, 224, 184, .10);
+      --surface: rgba(23, 26, 33, .82);
+      --surface-solid: #171a21;
       --surface-2: #1f232c;
+      --surface-3: #272c37;
       --border: #2a2f3a;
+      --border-strong: #3a4150;
       --text: #e8eaf0;
       --muted: #9aa3b2;
       --accent: #7c9cff;
+      --accent-ink: #0b0e14;
       --accent-2: #5ee0b8;
       --danger: #ff6b7a;
-      --radius: 16px;
-      --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+      --study: #7c9cff;
+      --fun: #ffb86b;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      --ring: 0 0 0 3px rgba(124, 156, 255, .25);
+      color-scheme: dark;
+    }
+    [data-theme="light"] {
+      --bg: #f4f6fb;
+      --bg-grad-1: rgba(124, 156, 255, .22);
+      --bg-grad-2: rgba(94, 224, 184, .18);
+      --surface: rgba(255, 255, 255, .85);
+      --surface-solid: #ffffff;
+      --surface-2: #eef1f8;
+      --surface-3: #e3e8f3;
+      --border: #dde2ee;
+      --border-strong: #c7cedd;
+      --text: #141824;
+      --muted: #5c6577;
+      --accent: #3d63ff;
+      --accent-ink: #ffffff;
+      --accent-2: #0fa97f;
+      --danger: #d93a4b;
+      --study: #3d63ff;
+      --fun: #e0831a;
+      --shadow: 0 10px 30px rgba(20, 24, 36, .08);
+      --ring: 0 0 0 3px rgba(61, 99, 255, .22);
+      color-scheme: light;
     }
 
     * { box-sizing: border-box; }
-
     html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family: Vazirmatn, "Vazir", "IRANSans", "Segoe UI", Tahoma, system-ui, sans-serif;
+      font-family: Vazirmatn, Vazir, IRANSans, "Segoe UI", Tahoma, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      padding-bottom: env(safe-area-inset-bottom);
+      min-height: 100dvh;
+      transition: background .3s, color .3s;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(800px 500px at 90% -10%, var(--bg-grad-1), transparent 60%),
+        radial-gradient(700px 500px at 0% 100%, var(--bg-grad-2), transparent 60%);
+      pointer-events: none;
     }
 
     .app {
-      max-width: 1100px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 20px 16px 48px;
+      padding: 16px 16px calc(96px + env(safe-area-inset-bottom));
     }
 
-    header {
+    /* ============ هدر ============ */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      margin-bottom: 20px;
+      padding: 12px 16px;
+      margin: 0 -4px 18px;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
-
-    h1 {
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin: 0;
-      letter-spacing: -.01em;
+    .brand { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .brand .logo {
+      width: 36px; height: 36px; border-radius: 11px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: grid; place-items: center; color: #fff; font-weight: 800;
     }
+    .brand h1 { font-size: 1.1rem; margin: 0; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand small { display: block; font-size: .72rem; color: var(--muted); font-weight: 400; }
 
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .actions { display: flex; gap: 8px; align-items: center; }
 
+    /* ============ دکمه‌ها ============ */
     .btn {
       appearance: none;
       border: 1px solid var(--border);
       background: var(--surface-2);
       color: var(--text);
       font: inherit;
-      font-size: .95rem;
+      font-size: .92rem;
       min-height: 44px;
       padding: 10px 16px;
-      border-radius: 12px;
+      border-radius: 13px;
       cursor: pointer;
-      transition: background .15s, border-color .15s, transform .05s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: background .15s, border-color .15s, transform .08s, box-shadow .15s;
+      -webkit-tap-highlight-color: transparent;
     }
-    .btn:hover { background: #262b36; border-color: #353b48; }
-    .btn:active { transform: scale(.98); }
-    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .btn-primary { background: var(--accent); border-color: var(--accent); color: #0b0e14; font-weight: 700; }
-    .btn-primary:hover { background: #91acff; border-color: #91acff; }
+    .btn:hover { background: var(--surface-3); border-color: var(--border-strong); }
+    .btn:active { transform: scale(.97); }
+    .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); font-weight: 700; }
+    .btn-primary:hover { filter: brightness(1.08); background: var(--accent); }
     .btn-danger { color: var(--danger); }
     .btn-danger:hover { border-color: var(--danger); }
+    .btn-icon { width: 44px; padding: 0; font-size: 1.15rem; }
+    .btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 
+    /* ============ فیلتر حالت هفته ============ */
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .seg {
+      display: inline-flex;
+      padding: 4px;
+      gap: 4px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+    }
+    .seg button {
+      appearance: none; border: 0; background: transparent; color: var(--muted);
+      font: inherit; font-size: .9rem; min-height: 38px; padding: 6px 14px;
+      border-radius: 10px; cursor: pointer; transition: background .15s, color .15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .seg button[aria-pressed="true"] { background: var(--surface-solid); color: var(--text); font-weight: 700; box-shadow: 0 1px 6px rgba(0,0,0,.15); }
+    .seg button:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 14px; border-radius: 999px;
+      background: var(--surface-2); border: 1px solid var(--border);
+      font-size: .86rem; color: var(--muted);
+    }
+    .chip b { color: var(--text); font-weight: 700; }
+    .chip i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .chip .st { background: var(--study); }
+    .chip .fn { background: var(--fun); }
+
+    /* ============ کارت‌ها ============ */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 14px;
     }
 
@@ -103,271 +208,599 @@
       box-shadow: var(--shadow);
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+      animation: rise .35s ease both;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color .2s, transform .2s;
     }
-
-    .card h2 {
-      margin: 0;
-      font-size: 1.05rem;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card h2::before {
+    .card:hover { border-color: var(--border-strong); }
+    .card.hidden { display: none; }
+    .card::after {
       content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+      position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 4px;
       background: var(--accent);
-      flex-shrink: 0;
+      opacity: .9;
     }
-    .card.exam h2::before { background: var(--accent-2); }
+    .card.exam::after { background: var(--accent-2); }
+    @keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 
-    .field { display: flex; flex-direction: column; gap: 6px; }
-    .field label { font-size: .85rem; color: var(--muted); }
+    .card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+    .card h2 { margin: 0; font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+    .card h2 small { display: block; font-size: .75rem; color: var(--muted); font-weight: 500; margin-top: 2px; }
+    .tag { font-size: .7rem; padding: 3px 9px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
+    .card.exam .tag { color: var(--accent-2); border-color: color-mix(in srgb, var(--accent-2) 40%, transparent); }
 
-    .field input {
-      font: inherit;
-      font-size: 1rem;
-      color: var(--text);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 14px;
-      min-height: 48px;
-      width: 100%;
+    .field {
+      display: flex; flex-direction: column; gap: 8px;
+      padding: 12px; border-radius: 14px;
+      background: var(--surface-2);
+      border: 1px solid transparent;
+      transition: border-color .15s;
+    }
+    .field:focus-within { border-color: var(--border-strong); }
+    .field-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+    .field-head label { font-size: .82rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+    .field-head label::before { content: ""; width: 8px; height: 8px; border-radius: 3px; background: var(--study); }
+    .field.fun .field-head label::before { background: var(--fun); }
+    .field-head output { font-weight: 800; font-size: .98rem; color: var(--text); }
+
+    .range-bar { height: 6px; border-radius: 999px; background: var(--surface-3); position: relative; overflow: hidden; }
+    .range-bar span { position: absolute; top: 0; bottom: 0; border-radius: 999px; background: var(--study); transition: inset-inline-start .2s, width .2s; }
+    .field.fun .range-bar span { background: var(--fun); }
+
+    .steppers { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .stepper { display: flex; flex-direction: column; gap: 4px; }
+    .stepper > span { font-size: .72rem; color: var(--muted); padding-inline-start: 4px; }
+    .stepper-row {
+      display: flex; align-items: stretch;
+      background: var(--bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
       transition: border-color .15s, box-shadow .15s;
     }
-    .field input:focus {
-      outline: none;
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(124, 156, 255, .2);
+    .stepper-row:focus-within { border-color: var(--accent); box-shadow: var(--ring); }
+    .stepper-row button {
+      appearance: none; border: 0; background: transparent; color: var(--text);
+      width: 44px; min-height: 46px; font-size: 1.3rem; cursor: pointer; flex-shrink: 0;
+      transition: background .12s; -webkit-tap-highlight-color: transparent;
     }
+    .stepper-row button:hover { background: var(--surface-3); }
+    .stepper-row button:active { background: var(--border); }
+    .stepper-row input {
+      flex: 1; min-width: 0; width: 100%; text-align: center;
+      font: inherit; font-size: 1.02rem; font-weight: 700; color: var(--text);
+      background: transparent; border: 0; padding: 0; min-height: 46px;
+      -moz-appearance: textfield;
+    }
+    .stepper-row input::-webkit-outer-spin-button, .stepper-row input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+    .stepper-row input:focus { outline: none; }
 
+    .card-foot { display: flex; justify-content: flex-end; }
+    .link {
+      appearance: none; background: none; border: 0; color: var(--muted); font: inherit; font-size: .78rem;
+      cursor: pointer; padding: 6px 8px; border-radius: 8px; min-height: 36px;
+    }
+    .link:hover { color: var(--text); background: var(--surface-2); }
+    .link:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    /* ============ نوار پایین (موبایل) ============ */
+    .dock {
+      position: fixed;
+      inset-inline: 0;
+      bottom: 0;
+      z-index: 20;
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+    }
+    .dock .btn { flex: 1; max-width: 220px; }
+
+    /* ============ منو ============ */
+    .menu-wrap { position: relative; }
+    .menu {
+      position: absolute; inset-inline-end: 0; top: calc(100% + 8px);
+      min-width: 230px; padding: 6px;
+      background: var(--surface-solid); border: 1px solid var(--border); border-radius: 14px;
+      box-shadow: var(--shadow); display: none; z-index: 30;
+      animation: rise .18s ease both;
+    }
+    .menu.open { display: block; }
+    .menu button {
+      appearance: none; width: 100%; text-align: start; border: 0; background: transparent;
+      color: var(--text); font: inherit; font-size: .92rem; padding: 11px 12px; min-height: 44px;
+      border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px;
+    }
+    .menu button:hover { background: var(--surface-2); }
+    .menu button.danger { color: var(--danger); }
+    .menu hr { border: 0; border-top: 1px solid var(--border); margin: 6px 4px; }
+    .menu svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    /* ============ Toast ============ */
     .toast {
       position: fixed;
-      bottom: 24px;
+      bottom: calc(84px + env(safe-area-inset-bottom));
       right: 50%;
-      transform: translateX(50%) translateY(20px);
-      background: var(--surface-2);
-      border: 1px solid var(--border);
+      transform: translateX(50%) translateY(16px);
+      background: var(--surface-solid);
+      border: 1px solid var(--border-strong);
       color: var(--text);
-      padding: 10px 18px;
-      border-radius: 12px;
+      padding: 10px 14px 10px 10px;
+      border-radius: 14px;
       box-shadow: var(--shadow);
       opacity: 0;
       pointer-events: none;
       transition: opacity .2s, transform .2s;
       font-size: .9rem;
+      z-index: 40;
+      display: flex; align-items: center; gap: 12px;
+      max-width: calc(100vw - 32px);
     }
-    .toast.show { opacity: 1; transform: translateX(50%) translateY(0); }
+    .toast.show { opacity: 1; pointer-events: auto; transform: translateX(50%) translateY(0); }
+    .toast button {
+      appearance: none; border: 0; background: var(--accent); color: var(--accent-ink);
+      font: inherit; font-weight: 700; font-size: .85rem; padding: 6px 12px; border-radius: 9px; cursor: pointer; min-height: 34px;
+    }
+    .toast button:empty { display: none; }
 
-    #printArea { display: none; }
-    #fileInput { display: none; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+    #printArea, #fileInput { display: none; }
 
-    @media (max-width: 480px) {
-      .toolbar { width: 100%; }
-      .btn { flex: 1 1 calc(50% - 4px); }
-      .btn-primary { flex-basis: 100%; }
+    @media (min-width: 720px) {
+      .dock { display: none; }
+      .app { padding-bottom: 48px; }
+      .toast { bottom: 28px; }
+    }
+    @media (max-width: 719px) {
+      .actions .desktop-only { display: none; }
+      .brand h1 { font-size: 1rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
     }
 
-    /* ---------- چاپ ---------- */
-    @page { size: A4; margin: 18mm 15mm; }
-
+    /* ============ چاپ ============ */
+    @page { size: A4; margin: 16mm 14mm; }
     @media print {
-      body { background: #fff; color: #000; font-size: 12pt; }
-      .app { display: none !important; }
-      .toast { display: none !important; }
+      body { background: #fff !important; color: #000; font-size: 11.5pt; }
+      body::before { display: none; }
+      .app, .dock, .toast, .menu { display: none !important; }
       #printArea { display: block; direction: rtl; }
-      #printArea h1 {
-        font-size: 20pt;
-        text-align: center;
-        margin: 0 0 14pt;
-        color: #000;
-      }
-      #printArea table {
-        width: 100%;
-        border-collapse: collapse;
-        page-break-inside: auto;
-      }
+      .p-head { text-align: center; margin-bottom: 12pt; border-bottom: 2px solid #000; padding-bottom: 8pt; }
+      .p-head h1 { font-size: 20pt; margin: 0 0 4pt; }
+      .p-head p { margin: 0; font-size: 10pt; color: #444; }
+      .p-section { font-size: 12.5pt; font-weight: 700; margin: 14pt 0 6pt; break-after: avoid; page-break-after: avoid; }
+      #printArea table { width: 100%; border-collapse: collapse; }
       #printArea th, #printArea td {
-        border: 1px solid #333;
-        padding: 8pt 10pt;
-        text-align: right;
-        vertical-align: middle;
-        word-break: keep-all;
-        white-space: nowrap;
+        border: 1px solid #333; padding: 7pt 10pt; text-align: right; vertical-align: middle;
+        word-break: keep-all; white-space: nowrap;
       }
-      #printArea th {
-        background: #eee;
-        font-weight: 700;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-      }
+      #printArea th { background: #e9e9e9; font-weight: 700; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       #printArea thead { display: table-header-group; }
-      #printArea tr { page-break-inside: avoid; break-inside: avoid; }
-      #printArea td:first-child { font-weight: 700; }
+      #printArea tr { break-inside: avoid; page-break-inside: avoid; }
+      #printArea td:first-child { font-weight: 700; width: 38%; }
+      #printArea tr.total td { background: #f5f5f5; font-weight: 700; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .p-foot { margin-top: 14pt; font-size: 9pt; color: #666; text-align: left; }
     }
   </style>
 </head>
 <body>
   <div class="app">
-    <header>
-      <h1>برنامهٔ مطالعه و تفریح</h1>
-      <div class="toolbar">
-        <button class="btn btn-primary" id="btnPrint" type="button">ساخت PDF / چاپ</button>
-        <button class="btn" id="btnExport" type="button">دریافت پشتیبان</button>
-        <button class="btn" id="btnImport" type="button">واردکردن پشتیبان</button>
-        <button class="btn btn-danger" id="btnReset" type="button">بازگرداندن مقادیر اولیه</button>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">📚</div>
+        <h1>برنامهٔ مطالعه و تفریح<small id="subtitle">برنامه‌ریز هفتگی</small></h1>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary desktop-only" id="btnPrint" type="button">
+          <svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
+          ساخت PDF / چاپ
+        </button>
+        <button class="btn btn-icon" id="btnTheme" type="button" aria-label="تغییر تم" title="تغییر تم">🌙</button>
+        <div class="menu-wrap">
+          <button class="btn btn-icon" id="btnMenu" type="button" aria-haspopup="true" aria-expanded="false" aria-label="گزینه‌های بیشتر">⋯</button>
+          <div class="menu" id="menu" role="menu">
+            <button type="button" id="btnExport" role="menuitem">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+              دریافت پشتیبان (JSON)
+            </button>
+            <button type="button" id="btnImport" role="menuitem">
+              <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              واردکردن پشتیبان
+            </button>
+            <button type="button" id="btnCopy" role="menuitem">
+              <svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              کپی برنامه به‌صورت متن
+            </button>
+            <button type="button" id="btnInstall" role="menuitem" hidden>
+              <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg>
+              نصب روی دستگاه
+            </button>
+            <hr>
+            <button type="button" id="btnReset" role="menuitem" class="danger">
+              <svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
+              بازگرداندن مقادیر اولیه
+            </button>
+          </div>
+        </div>
         <input type="file" id="fileInput" accept="application/json,.json">
       </div>
     </header>
 
+    <section class="controls">
+      <div class="seg" role="group" aria-label="نمایش">
+        <button type="button" data-view="all" aria-pressed="true">همه</button>
+        <button type="button" data-view="normal" aria-pressed="false">هفتهٔ عادی</button>
+        <button type="button" data-view="exam" aria-pressed="false">هفتهٔ آزمون</button>
+      </div>
+      <div class="summary" id="summary" aria-live="polite"></div>
+    </section>
+
     <main class="grid" id="cards"></main>
   </div>
 
+  <nav class="dock" aria-label="اقدامات">
+    <button class="btn btn-primary" id="btnPrintMobile" type="button">ساخت PDF / چاپ</button>
+  </nav>
+
   <section id="printArea" aria-hidden="true">
-    <h1>برنامهٔ مطالعه و تفریح</h1>
+    <div class="p-head">
+      <h1>برنامهٔ مطالعه و تفریح</h1>
+      <p id="printDate"></p>
+    </div>
     <table>
-      <thead>
-        <tr><th>روز</th><th>ساعت مطالعه</th><th>بودجهٔ تفریح</th></tr>
-      </thead>
+      <thead><tr><th>روز</th><th>ساعت مطالعه</th><th>بودجهٔ تفریح</th></tr></thead>
       <tbody id="printBody"></tbody>
     </table>
+    <div class="p-section">جمع هفتگی</div>
+    <table>
+      <thead><tr><th>حالت هفته</th><th>مجموع مطالعه</th><th>مجموع تفریح</th></tr></thead>
+      <tbody id="printTotals"></tbody>
+    </table>
+    <p class="p-foot">برنامهٔ مطالعه و تفریح</p>
   </section>
 
-  <div class="toast" id="toast" role="status"></div>
+  <div class="toast" id="toast" role="status"><span id="toastMsg"></span><button type="button" id="toastAction"></button></div>
 
   <script>
     'use strict';
 
-    const STORAGE_KEY = 'study-fun-planner-v1';
+    /* ================= ثابت‌ها ================= */
+    const STORAGE_KEY = 'study-fun-planner-v2';
+    const LEGACY_KEY  = 'study-fun-planner-v1';
+    const THEME_KEY   = 'study-fun-planner-theme';
+    const VIEW_KEY    = 'study-fun-planner-view';
+    const STEP = 15;        // دقیقه
+    const MAX_MIN = 12 * 60; // سقف هر فیلد
+    const BAR_MAX = 6 * 60;  // مقیاس نوار نمایش
 
-    const DEFAULTS = [
-      { id: 'sat',      day: 'شنبه',                 study: '۲ تا ۲٫۵ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
-      { id: 'sun',      day: 'یکشنبه',               study: '۳ تا ۳٫۵ ساعت',  fun: '۳۰ تا ۴۵ دقیقه' },
-      { id: 'mon',      day: 'دوشنبه',               study: '۲ تا ۲٫۵ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
-      { id: 'tue',      day: 'سه‌شنبه',              study: '۱ تا ۱٫۵ ساعت',  fun: 'صفر' },
-      { id: 'wed',      day: 'چهارشنبه',             study: '۲٫۵ تا ۳ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
-      { id: 'thu',      day: 'پنجشنبه — بدون آزمون', study: '۴ تا ۵ ساعت',    fun: '۴۵ تا ۶۰ دقیقه', exam: true },
-      { id: 'thuExam',  day: 'پنجشنبه — با آزمون',   study: '۳ تا ۴ ساعت',    fun: '۳۰ تا ۴۵ دقیقه', exam: true },
-      { id: 'fri',      day: 'جمعه — بدون آزمون',    study: '۴ تا ۵ ساعت',    fun: '۱ تا ۱٫۵ ساعت',  exam: true },
-      { id: 'friExam',  day: 'جمعه — هفتهٔ آزمون',   study: '۱ تا ۲ ساعت',    fun: '۳۰ تا ۶۰ دقیقه', exam: true },
+    // study/fun به دقیقه: [حداقل, حداکثر]
+    const DAYS = [
+      { id: 'sat',     day: 'شنبه',     study: [120, 150], fun: [0, 30] },
+      { id: 'sun',     day: 'یکشنبه',   study: [180, 210], fun: [30, 45] },
+      { id: 'mon',     day: 'دوشنبه',   study: [120, 150], fun: [0, 30] },
+      { id: 'tue',     day: 'سه‌شنبه',  study: [60, 90],   fun: [0, 0] },
+      { id: 'wed',     day: 'چهارشنبه', study: [150, 180], fun: [0, 30] },
+      { id: 'thu',     day: 'پنجشنبه',  sub: 'بدون آزمون',  mode: 'normal', study: [240, 300], fun: [45, 60] },
+      { id: 'thuExam', day: 'پنجشنبه',  sub: 'با آزمون',    mode: 'exam',   study: [180, 240], fun: [30, 45] },
+      { id: 'fri',     day: 'جمعه',     sub: 'بدون آزمون',  mode: 'normal', study: [240, 300], fun: [60, 90] },
+      { id: 'friExam', day: 'جمعه',     sub: 'هفتهٔ آزمون', mode: 'exam',   study: [60, 120],  fun: [30, 60] },
     ];
+    const byId = Object.fromEntries(DAYS.map(d => [d.id, d]));
+    const fullName = d => d.sub ? `${d.day} — ${d.sub}` : d.day;
 
-    /* ---------- state ---------- */
+    /* ================= اعداد فارسی ================= */
+    const FA_DIGITS = '۰۱۲۳۴۵۶۷۸۹';
+    const toFa = s => String(s).replace(/\d/g, c => FA_DIGITS[c]).replace('.', '٫');
+    const toEn = s => String(s).replace(/[۰-۹]/g, c => FA_DIGITS.indexOf(c)).replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)).replace(/[٫,]/g, '.');
+    const hoursStr = m => toFa(String(Math.round((m / 60) * 100) / 100).replace(/\.0+$/, ''));
+
+    function fmtRange(min, max) {
+      if (max === 0) return 'صفر';
+      const useMin = max < 60 || (max === 60 && min < 60);
+      const one = v => useMin ? `${toFa(v)} دقیقه` : `${hoursStr(v)} ساعت`;
+      const raw = v => useMin ? toFa(v) : hoursStr(v);
+      if (min === max) return one(min);
+      if (!useMin && min > 0 && min < 60) return `${toFa(min)} دقیقه تا ${hoursStr(max)} ساعت`;
+      return `${raw(min)} تا ${one(max)}`;
+    }
+
+    /* ================= وضعیت ================= */
+    const clamp = v => Math.max(0, Math.min(MAX_MIN, Math.round(v)));
+    const normPair = (p, fallback) => {
+      if (!Array.isArray(p) || p.length !== 2) return [...fallback];
+      let a = Number(p[0]), b = Number(p[1]);
+      if (!Number.isFinite(a) || !Number.isFinite(b)) return [...fallback];
+      a = clamp(a); b = clamp(b);
+      return a <= b ? [a, b] : [b, a];
+    };
+
     function defaultState() {
       const s = {};
-      DEFAULTS.forEach(d => { s[d.id] = { study: d.study, fun: d.fun }; });
+      DAYS.forEach(d => { s[d.id] = { study: [...d.study], fun: [...d.fun] }; });
       return s;
+    }
+
+    // تبدیل متن آزاد نسخهٔ قبلی (مثل «۲ تا ۲٫۵ ساعت») به دقیقه
+    function parseLegacy(text, fallback) {
+      if (typeof text !== 'string') return null;
+      const t = toEn(text.trim());
+      if (/^(صفر|0)$/.test(t)) return [0, 0];
+      const nums = (t.match(/\d+(?:\.\d+)?/g) || []).map(Number);
+      if (!nums.length) return null;
+      const isMin = /دقیقه|min/i.test(t) && !/ساعت|hour|h\b/i.test(t);
+      const mixed = /دقیقه/.test(t) && /ساعت/.test(t);
+      let a = nums[0], b = nums.length > 1 ? nums[1] : nums[0];
+      if (mixed) { a = a; b = b * 60; }
+      else if (isMin) { /* already minutes */ }
+      else { a *= 60; b *= 60; }
+      return normPair([a, b], fallback);
     }
 
     function sanitize(raw) {
       const base = defaultState();
       if (!raw || typeof raw !== 'object') return base;
-      DEFAULTS.forEach(d => {
-        const item = raw[d.id];
-        if (item && typeof item === 'object') {
-          if (typeof item.study === 'string') base[d.id].study = item.study;
-          if (typeof item.fun === 'string') base[d.id].fun = item.fun;
-        }
+      DAYS.forEach(d => {
+        const it = raw[d.id];
+        if (!it || typeof it !== 'object') return;
+        ['study', 'fun'].forEach(k => {
+          if (Array.isArray(it[k])) base[d.id][k] = normPair(it[k], d[k]);
+          else if (typeof it[k] === 'string') base[d.id][k] = parseLegacy(it[k], d[k]) || [...d[k]];
+        });
       });
       return base;
     }
 
     function load() {
       try {
-        return sanitize(JSON.parse(localStorage.getItem(STORAGE_KEY)));
-      } catch {
-        return defaultState();
-      }
-    }
-
-    function save() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-      } catch (e) {
-        toast('ذخیره‌سازی ناموفق بود');
-      }
+        const v2 = localStorage.getItem(STORAGE_KEY);
+        if (v2) return sanitize(JSON.parse(v2));
+        const v1 = localStorage.getItem(LEGACY_KEY);
+        if (v1) { const s = sanitize(JSON.parse(v1)); return s; }
+      } catch { /* ignore */ }
+      return defaultState();
     }
 
     let state = load();
+    let saveTimer;
+    function save() {
+      clearTimeout(saveTimer);
+      saveTimer = setTimeout(() => {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+        catch { toast('ذخیره‌سازی ناموفق بود'); }
+      }, 120);
+    }
 
-    /* ---------- render ---------- */
+    /* ================= رندر کارت‌ها ================= */
     const cardsEl = document.getElementById('cards');
-    const printBody = document.getElementById('printBody');
+
+    function stepperHTML(id, key, idx, label) {
+      const inputId = `${key}-${idx}-${id}`;
+      return `
+        <div class="stepper">
+          <span>${label}</span>
+          <div class="stepper-row">
+            <button type="button" data-act="dec" data-id="${id}" data-key="${key}" data-idx="${idx}" aria-label="کاهش ${label}">−</button>
+            <input id="${inputId}" type="text" inputmode="decimal" autocomplete="off" enterkeyhint="next"
+                   data-id="${id}" data-key="${key}" data-idx="${idx}" aria-label="${label} (ساعت)">
+            <button type="button" data-act="inc" data-id="${id}" data-key="${key}" data-idx="${idx}" aria-label="افزایش ${label}">+</button>
+          </div>
+        </div>`;
+    }
+
+    function fieldHTML(d, key, label) {
+      return `
+        <div class="field ${key}" data-field="${d.id}-${key}">
+          <div class="field-head">
+            <label>${label}</label>
+            <output data-out="${d.id}-${key}"></output>
+          </div>
+          <div class="range-bar" aria-hidden="true"><span data-bar="${d.id}-${key}"></span></div>
+          <div class="steppers">
+            ${stepperHTML(d.id, key, 0, 'حداقل')}
+            ${stepperHTML(d.id, key, 1, 'حداکثر')}
+          </div>
+        </div>`;
+    }
 
     function renderCards() {
       cardsEl.innerHTML = '';
-      DEFAULTS.forEach(d => {
+      DAYS.forEach((d, i) => {
         const card = document.createElement('article');
-        card.className = 'card' + (d.exam ? ' exam' : '');
+        card.className = 'card' + (d.mode === 'exam' ? ' exam' : '');
+        card.dataset.id = d.id;
+        card.dataset.mode = d.mode || 'both';
+        card.style.animationDelay = `${i * 40}ms`;
         card.innerHTML = `
-          <h2>${d.day}</h2>
-          <div class="field">
-            <label for="study-${d.id}">ساعت مطالعه</label>
-            <input id="study-${d.id}" type="text" data-id="${d.id}" data-key="study" autocomplete="off" enterkeyhint="next">
+          <div class="card-head">
+            <h2>${d.day}${d.sub ? `<small>${d.sub}</small>` : ''}</h2>
+            ${d.mode ? `<span class="tag">${d.mode === 'exam' ? 'هفتهٔ آزمون' : 'هفتهٔ عادی'}</span>` : ''}
           </div>
-          <div class="field">
-            <label for="fun-${d.id}">بودجهٔ تفریح</label>
-            <input id="fun-${d.id}" type="text" data-id="${d.id}" data-key="fun" autocomplete="off" enterkeyhint="next">
-          </div>`;
+          ${fieldHTML(d, 'study', 'ساعت مطالعه')}
+          ${fieldHTML(d, 'fun', 'بودجهٔ تفریح')}
+          <div class="card-foot"><button type="button" class="link" data-reset="${d.id}">بازنشانی این روز</button></div>`;
         cardsEl.appendChild(card);
       });
-      fillInputs();
+      refreshAll();
     }
 
-    function fillInputs() {
-      cardsEl.querySelectorAll('input[data-id]').forEach(inp => {
-        inp.value = state[inp.dataset.id][inp.dataset.key];
+    function refreshField(id, key) {
+      const [a, b] = state[id][key];
+      cardsEl.querySelector(`[data-out="${id}-${key}"]`).textContent = fmtRange(a, b);
+      const bar = cardsEl.querySelector(`[data-bar="${id}-${key}"]`);
+      const s = Math.min(a, BAR_MAX) / BAR_MAX * 100, e = Math.min(b, BAR_MAX) / BAR_MAX * 100;
+      bar.style.insetInlineStart = s + '%';
+      bar.style.width = Math.max(e - s, b > 0 ? 1.5 : 0) + '%';
+      cardsEl.querySelectorAll(`input[data-id="${id}"][data-key="${key}"]`).forEach(inp => {
+        if (document.activeElement !== inp) inp.value = hoursStr(state[id][key][inp.dataset.idx]);
       });
     }
 
-    function renderPrint() {
-      printBody.innerHTML = '';
-      DEFAULTS.forEach(d => {
-        const tr = document.createElement('tr');
-        [d.day, state[d.id].study, state[d.id].fun].forEach(v => {
-          const td = document.createElement('td');
-          td.textContent = v || '—';
-          tr.appendChild(td);
+    function refreshAll() {
+      DAYS.forEach(d => { refreshField(d.id, 'study'); refreshField(d.id, 'fun'); });
+      renderSummary();
+    }
+
+    /* ================= ویرایش ================= */
+    function setValue(id, key, idx, minutes) {
+      const pair = state[id][key];
+      const v = clamp(minutes);
+      pair[idx] = v;
+      if (idx === 0 && pair[1] < v) pair[1] = v;
+      if (idx === 1 && pair[0] > v) pair[0] = v;
+      save();
+      refreshField(id, key);
+      renderSummary();
+    }
+
+    cardsEl.addEventListener('click', e => {
+      const btn = e.target.closest('button[data-act]');
+      if (btn) {
+        const { id, key, idx, act } = btn.dataset;
+        const cur = state[id][key][idx];
+        const base = Math.round(cur / STEP) * STEP;
+        setValue(id, key, +idx, act === 'inc' ? base + STEP : base - STEP);
+        if (navigator.vibrate) navigator.vibrate(8);
+        return;
+      }
+      const rs = e.target.closest('button[data-reset]');
+      if (rs) {
+        const id = rs.dataset.reset;
+        const prev = JSON.parse(JSON.stringify(state[id]));
+        state[id] = { study: [...byId[id].study], fun: [...byId[id].fun] };
+        save(); refreshField(id, 'study'); refreshField(id, 'fun'); renderSummary();
+        toast(`${fullName(byId[id])} بازنشانی شد`, 'بازگردانی', () => {
+          state[id] = prev; save(); refreshField(id, 'study'); refreshField(id, 'fun'); renderSummary();
         });
-        printBody.appendChild(tr);
-      });
-    }
+      }
+    });
 
-    /* ---------- events ---------- */
     cardsEl.addEventListener('input', e => {
       const inp = e.target;
       if (!inp.matches('input[data-id]')) return;
-      state[inp.dataset.id][inp.dataset.key] = inp.value;
-      save();
+      const n = parseFloat(toEn(inp.value));
+      if (!Number.isFinite(n)) return;
+      setValue(inp.dataset.id, inp.dataset.key, +inp.dataset.idx, n * 60);
+    });
+
+    cardsEl.addEventListener('focusin', e => { if (e.target.matches('input[data-id]')) e.target.select(); });
+    cardsEl.addEventListener('focusout', e => {
+      const inp = e.target;
+      if (!inp.matches('input[data-id]')) return;
+      inp.value = hoursStr(state[inp.dataset.id][inp.dataset.key][inp.dataset.idx]);
     });
 
     cardsEl.addEventListener('keydown', e => {
-      if (e.key !== 'Enter' || !e.target.matches('input[data-id]')) return;
-      const inputs = [...cardsEl.querySelectorAll('input[data-id]')];
-      const next = inputs[inputs.indexOf(e.target) + 1];
-      if (next) next.focus(); else e.target.blur();
+      const inp = e.target;
+      if (!inp.matches('input[data-id]')) return;
+      const { id, key, idx } = inp.dataset;
+      if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const cur = state[id][key][idx];
+        setValue(id, key, +idx, cur + (e.key === 'ArrowUp' ? STEP : -STEP));
+        inp.value = hoursStr(state[id][key][idx]);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        const inputs = [...cardsEl.querySelectorAll('input[data-id]')].filter(i => i.offsetParent !== null);
+        const next = inputs[inputs.indexOf(inp) + 1];
+        if (next) next.focus(); else inp.blur();
+      }
     });
 
-    document.getElementById('btnPrint').addEventListener('click', () => {
-      renderPrint();
-      window.print();
-    });
+    /* ================= نمایش / جمع هفتگی ================= */
+    let view = localStorage.getItem(VIEW_KEY) || 'all';
+    const segButtons = document.querySelectorAll('.seg button');
+
+    function applyView() {
+      segButtons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === view)));
+      cardsEl.querySelectorAll('.card').forEach(c => {
+        const m = c.dataset.mode;
+        c.classList.toggle('hidden', view !== 'all' && m !== 'both' && m !== view);
+      });
+      renderSummary();
+    }
+    segButtons.forEach(b => b.addEventListener('click', () => {
+      view = b.dataset.view;
+      localStorage.setItem(VIEW_KEY, view);
+      applyView();
+    }));
+
+    function totals(mode) {
+      const t = { study: [0, 0], fun: [0, 0] };
+      DAYS.filter(d => !d.mode || d.mode === mode).forEach(d => {
+        ['study', 'fun'].forEach(k => { t[k][0] += state[d.id][k][0]; t[k][1] += state[d.id][k][1]; });
+      });
+      return t;
+    }
+
+    function renderSummary() {
+      const el = document.getElementById('summary');
+      const modes = view === 'all' ? ['normal', 'exam'] : [view];
+      el.innerHTML = modes.map(m => {
+        const t = totals(m);
+        const name = m === 'exam' ? 'هفتهٔ آزمون' : 'هفتهٔ عادی';
+        return `<span class="chip" title="${name}"><i class="st"></i>${name}: <b>${fmtRange(...t.study)}</b> مطالعه</span>
+                <span class="chip" title="${name}"><i class="fn"></i>${name}: <b>${fmtRange(...t.fun)}</b> تفریح</span>`;
+      }).join('');
+    }
+
+    /* ================= چاپ ================= */
+    function renderPrint() {
+      const body = document.getElementById('printBody');
+      body.innerHTML = '';
+      DAYS.forEach(d => {
+        const tr = document.createElement('tr');
+        [fullName(d), fmtRange(...state[d.id].study), fmtRange(...state[d.id].fun)].forEach(v => {
+          const td = document.createElement('td'); td.textContent = v; tr.appendChild(td);
+        });
+        body.appendChild(tr);
+      });
+      const tb = document.getElementById('printTotals');
+      tb.innerHTML = '';
+      [['هفتهٔ عادی', 'normal'], ['هفتهٔ آزمون', 'exam']].forEach(([name, m]) => {
+        const t = totals(m);
+        const tr = document.createElement('tr'); tr.className = 'total';
+        [name, fmtRange(...t.study), fmtRange(...t.fun)].forEach(v => {
+          const td = document.createElement('td'); td.textContent = v; tr.appendChild(td);
+        });
+        tb.appendChild(tr);
+      });
+      let dateStr = '';
+      try { dateStr = new Intl.DateTimeFormat('fa-IR-u-ca-persian', { dateStyle: 'long' }).format(new Date()); } catch { /* ignore */ }
+      document.getElementById('printDate').textContent = dateStr ? `تاریخ: ${dateStr}` : '';
+    }
+    function doPrint() { renderPrint(); window.print(); }
+    document.getElementById('btnPrint').addEventListener('click', doPrint);
+    document.getElementById('btnPrintMobile').addEventListener('click', doPrint);
     window.addEventListener('beforeprint', renderPrint);
 
+    /* ================= منو ================= */
+    const menu = document.getElementById('menu');
+    const btnMenu = document.getElementById('btnMenu');
+    function closeMenu() { menu.classList.remove('open'); btnMenu.setAttribute('aria-expanded', 'false'); }
+    btnMenu.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = !menu.classList.contains('open');
+      menu.classList.toggle('open', open);
+      btnMenu.setAttribute('aria-expanded', String(open));
+    });
+    document.addEventListener('click', e => { if (!menu.contains(e.target)) closeMenu(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+    menu.addEventListener('click', e => { if (e.target.closest('button')) closeMenu(); });
+
+    /* ================= پشتیبان ================= */
     document.getElementById('btnExport').addEventListener('click', () => {
-      const payload = { app: 'study-fun-planner', version: 1, exportedAt: new Date().toISOString(), data: state };
+      const payload = { app: 'study-fun-planner', version: 2, exportedAt: new Date().toISOString(), data: state };
       const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = url;
-      a.download = 'study-planner-backup.json';
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      a.href = url; a.download = 'study-planner-backup.json';
+      document.body.appendChild(a); a.click(); a.remove();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
       toast('فایل پشتیبان دریافت شد');
     });
@@ -382,13 +815,11 @@
         try {
           const parsed = JSON.parse(reader.result);
           const raw = parsed && parsed.data && typeof parsed.data === 'object' ? parsed.data : parsed;
+          const prev = JSON.parse(JSON.stringify(state));
           state = sanitize(raw);
-          save();
-          fillInputs();
-          toast('پشتیبان با موفقیت وارد شد');
-        } catch {
-          toast('فایل پشتیبان معتبر نیست');
-        }
+          save(); refreshAll();
+          toast('پشتیبان با موفقیت وارد شد', 'بازگردانی', () => { state = prev; save(); refreshAll(); });
+        } catch { toast('فایل پشتیبان معتبر نیست'); }
         fileInput.value = '';
       };
       reader.onerror = () => toast('خواندن فایل ناموفق بود');
@@ -397,31 +828,114 @@
 
     document.getElementById('btnReset').addEventListener('click', () => {
       if (!confirm('همهٔ مقادیر به حالت اولیه بازگردانده شوند؟')) return;
+      const prev = JSON.parse(JSON.stringify(state));
       state = defaultState();
-      save();
-      fillInputs();
-      toast('مقادیر اولیه بازگردانده شد');
+      save(); refreshAll();
+      toast('مقادیر اولیه بازگردانده شد', 'بازگردانی', () => { state = prev; save(); refreshAll(); });
     });
 
-    /* ---------- toast ---------- */
+    /* ================= کپی متن ================= */
+    function planText() {
+      const lines = ['برنامهٔ مطالعه و تفریح', ''];
+      DAYS.forEach(d => lines.push(`${fullName(d)}: مطالعه ${fmtRange(...state[d.id].study)} | تفریح ${fmtRange(...state[d.id].fun)}`));
+      lines.push('');
+      [['هفتهٔ عادی', 'normal'], ['هفتهٔ آزمون', 'exam']].forEach(([n, m]) => {
+        const t = totals(m);
+        lines.push(`جمع ${n}: مطالعه ${fmtRange(...t.study)} | تفریح ${fmtRange(...t.fun)}`);
+      });
+      return lines.join('\n');
+    }
+    document.getElementById('btnCopy').addEventListener('click', async () => {
+      const text = planText();
+      try {
+        if (navigator.share && /Mobi|Android/i.test(navigator.userAgent)) {
+          await navigator.share({ title: 'برنامهٔ مطالعه و تفریح', text });
+          return;
+        }
+        await navigator.clipboard.writeText(text);
+        toast('برنامه در کلیپ‌بورد کپی شد');
+      } catch {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta); ta.select();
+          document.execCommand('copy'); ta.remove();
+          toast('برنامه در کلیپ‌بورد کپی شد');
+        } catch { toast('کپی ناموفق بود'); }
+      }
+    });
+
+    /* ================= تم ================= */
+    const btnTheme = document.getElementById('btnTheme');
+    function applyTheme(t) {
+      document.documentElement.dataset.theme = t;
+      btnTheme.textContent = t === 'dark' ? '🌙' : '☀️';
+      const meta = document.querySelector('meta[name="theme-color"]:not([media])') || (() => {
+        const m = document.createElement('meta'); m.name = 'theme-color'; document.head.appendChild(m); return m;
+      })();
+      meta.content = t === 'dark' ? '#0b0d12' : '#f4f6fb';
+    }
+    applyTheme(localStorage.getItem(THEME_KEY) || ((window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark'));
+    btnTheme.addEventListener('click', () => {
+      const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem(THEME_KEY, t);
+      applyTheme(t);
+    });
+
+    /* ================= میان‌برها ================= */
+    document.addEventListener('keydown', e => {
+      if (!(e.ctrlKey || e.metaKey)) return;
+      if (e.key.toLowerCase() === 's') { e.preventDefault(); document.getElementById('btnExport').click(); }
+      if (e.key.toLowerCase() === 'p') { e.preventDefault(); doPrint(); }
+    });
+
+    /* ================= Toast ================= */
     let toastTimer;
-    function toast(msg) {
-      const el = document.getElementById('toast');
-      el.textContent = msg;
-      el.classList.add('show');
+    const toastEl = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+    const toastAction = document.getElementById('toastAction');
+    let toastHandler = null;
+    toastAction.addEventListener('click', () => { if (toastHandler) toastHandler(); hideToast(); });
+    function hideToast() { toastEl.classList.remove('show'); toastHandler = null; }
+    function toast(msg, actionLabel, onAction) {
+      toastMsg.textContent = msg;
+      toastAction.textContent = actionLabel || '';
+      toastHandler = onAction || null;
+      toastEl.classList.add('show');
       clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+      toastTimer = setTimeout(hideToast, actionLabel ? 6000 : 2400);
     }
 
-    /* ---------- init ---------- */
-    renderCards();
-    renderPrint();
+    /* ================= نصب PWA ================= */
+    let installPrompt = null;
+    const btnInstall = document.getElementById('btnInstall');
+    window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); installPrompt = e; btnInstall.hidden = false; });
+    btnInstall.addEventListener('click', async () => {
+      if (!installPrompt) return;
+      installPrompt.prompt();
+      await installPrompt.userChoice;
+      installPrompt = null; btnInstall.hidden = true;
+    });
+    window.addEventListener('appinstalled', () => { btnInstall.hidden = true; toast('برنامه نصب شد'); });
 
     if ('serviceWorker' in navigator && location.protocol !== 'file:') {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('sw.js').catch(() => {});
+        navigator.serviceWorker.register('sw.js').then(reg => {
+          reg.addEventListener('updatefound', () => {
+            const nw = reg.installing;
+            nw && nw.addEventListener('statechange', () => {
+              if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+                toast('نسخهٔ جدید آماده است', 'به‌روزرسانی', () => location.reload());
+              }
+            });
+          });
+        }).catch(() => {});
       });
     }
+
+    /* ================= شروع ================= */
+    renderCards();
+    applyView();
+    renderPrint();
   </script>
 </body>
 </html>
