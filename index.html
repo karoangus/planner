@@ -194,6 +194,51 @@
     .chip .st { background: var(--study); }
     .chip .fn { background: var(--fun); }
 
+    /* ============ تایمر ============ */
+    .timers { margin: 0 0 22px; }
+    .section-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+    .section-title h2 { margin: 0; font-size: 1rem; font-weight: 800; color: var(--muted); }
+    .timers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+    .timer {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 18px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 12px;
+      position: relative; overflow: hidden;
+    }
+    .timer::after { content: ""; position: absolute; inset-inline-start: 0; top: 0; bottom: 0; width: 4px; background: var(--study); }
+    .timer.fun::after { background: var(--fun); }
+    .timer.running { border-color: var(--border-strong); }
+    .timer.done { border-color: var(--danger); animation: pulse 1s ease-in-out infinite; }
+    @keyframes pulse { 0%,100% { box-shadow: var(--shadow); } 50% { box-shadow: 0 0 0 6px color-mix(in srgb, var(--danger) 30%, transparent); } }
+    .timer-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .timer-head h3 { margin: 0; font-size: 1.02rem; font-weight: 800; }
+    .timer select {
+      font: inherit; font-size: .9rem; color: var(--text); background: var(--bg); border: 1px solid var(--border);
+      border-radius: 12px; padding: 10px 12px; min-height: 44px; width: 100%;
+    }
+    .timer select:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+    .timer-display {
+      font-variant-numeric: tabular-nums; text-align: center; font-size: clamp(2.6rem, 9vw, 3.6rem);
+      font-weight: 800; letter-spacing: .02em; line-height: 1.1; direction: ltr; padding: 6px 0 2px;
+    }
+    .timer.done .timer-display { color: var(--danger); }
+    .timer-progress { height: 8px; border-radius: 999px; background: var(--surface-3); overflow: hidden; }
+    .timer-progress span { display: block; height: 100%; width: 0; background: var(--study); transition: width .5s linear; }
+    .timer.fun .timer-progress span { background: var(--fun); }
+    .timer-set { display: flex; align-items: center; gap: 8px; }
+    .timer-set .stepper-row { flex: 1; }
+    .timer-set .unit { font-size: .85rem; color: var(--muted); white-space: nowrap; }
+    .timer-controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+    .timer-controls .btn { padding-inline: 8px; }
+    .timer-status { font-size: .8rem; color: var(--muted); text-align: center; min-height: 1.2em; }
+    .timer.done .timer-status { color: var(--danger); font-weight: 700; }
+    .notice {
+      display: none; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+      padding: 10px 14px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border);
+      font-size: .85rem; color: var(--muted); margin-bottom: 12px;
+    }
+    .notice.show { display: flex; }
+    @media print { .timers { display: none !important; } }
+
     /* ============ کارت‌ها ============ */
     .grid {
       display: grid;
@@ -458,6 +503,59 @@
         <button type="button" data-view="exam" aria-pressed="false">هفتهٔ آزمون</button>
       </div>
       <div class="summary" id="summary" aria-live="polite"></div>
+    </section>
+
+    <section class="timers" id="timers">
+      <div class="section-title">
+        <h2>تایمر</h2>
+        <button type="button" class="link" id="btnTestSound">🔊 تست صدا</button>
+      </div>
+      <div class="notice" id="notifNotice">
+        <span>برای دریافت اعلان در پایان تایمر، اجازهٔ اعلان لازم است.</span>
+        <button type="button" class="btn" id="btnNotif" style="min-height:38px">فعال‌کردن اعلان</button>
+      </div>
+      <div class="timers-grid">
+        <article class="timer study" data-timer="study">
+          <div class="timer-head"><h3>تایمر مطالعه</h3><span class="tag">ساعت مطالعه</span></div>
+          <select data-day aria-label="انتخاب روز"></select>
+          <div class="timer-display" data-display>00:00</div>
+          <div class="timer-progress"><span data-progress></span></div>
+          <div class="timer-set">
+            <div class="stepper-row">
+              <button type="button" data-tact="dec" aria-label="کاهش">−</button>
+              <input type="text" inputmode="numeric" data-minutes aria-label="مدت (دقیقه)">
+              <button type="button" data-tact="inc" aria-label="افزایش">+</button>
+            </div>
+            <span class="unit">دقیقه</span>
+          </div>
+          <div class="timer-controls">
+            <button type="button" class="btn btn-primary" data-tact="start">شروع</button>
+            <button type="button" class="btn" data-tact="pause" disabled>توقف</button>
+            <button type="button" class="btn" data-tact="reset">بازنشانی</button>
+          </div>
+          <div class="timer-status" data-status></div>
+        </article>
+        <article class="timer fun" data-timer="fun">
+          <div class="timer-head"><h3>تایمر تفریح</h3><span class="tag">بودجهٔ تفریح</span></div>
+          <select data-day aria-label="انتخاب روز"></select>
+          <div class="timer-display" data-display>00:00</div>
+          <div class="timer-progress"><span data-progress></span></div>
+          <div class="timer-set">
+            <div class="stepper-row">
+              <button type="button" data-tact="dec" aria-label="کاهش">−</button>
+              <input type="text" inputmode="numeric" data-minutes aria-label="مدت (دقیقه)">
+              <button type="button" data-tact="inc" aria-label="افزایش">+</button>
+            </div>
+            <span class="unit">دقیقه</span>
+          </div>
+          <div class="timer-controls">
+            <button type="button" class="btn btn-primary" data-tact="start">شروع</button>
+            <button type="button" class="btn" data-tact="pause" disabled>توقف</button>
+            <button type="button" class="btn" data-tact="reset">بازنشانی</button>
+          </div>
+          <div class="timer-status" data-status></div>
+        </article>
+      </div>
     </section>
 
     <main class="grid" id="cards"></main>
@@ -972,10 +1070,234 @@
       });
     }
 
+    /* ================= تایمر ================= */
+    const TIMER_KEY = 'study-fun-planner-timers';
+    const TIMER_LABEL = { study: 'مطالعه', fun: 'تفریح' };
+    const timers = {};  // key -> { el, day, minutes, total, remaining, endAt, running, done }
+
+    // ---- صدا (Web Audio، بدون فایل خارجی) ----
+    let audioCtx = null;
+    function getAudio() {
+      try {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (!AC) return null;
+        if (!audioCtx) audioCtx = new AC();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        return audioCtx;
+      } catch { return null; }
+    }
+    function beep(ctx, t, freq, dur, gainV) {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = 'sine'; o.frequency.value = freq;
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(gainV, t + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.001, t + dur);
+      o.connect(g).connect(ctx.destination);
+      o.start(t); o.stop(t + dur + 0.02);
+    }
+    function playChime(kind) {
+      const ctx = getAudio();
+      if (!ctx) return false;
+      const t = ctx.currentTime;
+      const notes = kind === 'fun' ? [523, 659, 784, 1047] : [784, 659, 784, 1047];
+      notes.forEach((f, i) => beep(ctx, t + i * 0.18, f, 0.35, 0.5));
+      [0.9, 1.1, 1.3].forEach(d => beep(ctx, t + d, 1047, 0.15, 0.4));
+      return true;
+    }
+    let alarmInterval = null;
+    function startAlarm(kind) {
+      stopAlarm();
+      playChime(kind);
+      if (navigator.vibrate) navigator.vibrate([300, 150, 300, 150, 600]);
+      alarmInterval = setInterval(() => {
+        playChime(kind);
+        if (navigator.vibrate) navigator.vibrate([300, 150, 300]);
+      }, 2500);
+      setTimeout(stopAlarm, 60000); // حداکثر یک دقیقه
+    }
+    function stopAlarm() { if (alarmInterval) { clearInterval(alarmInterval); alarmInterval = null; } }
+
+    document.getElementById('btnTestSound').addEventListener('click', () => {
+      if (playChime('study')) toast('اگر صدا را شنیدید، تایمر هم صدا خواهد داد');
+      else toast('مرورگر شما از پخش صدا پشتیبانی نمی‌کند');
+    });
+
+    // ---- اعلان ----
+    const notifNotice = document.getElementById('notifNotice');
+    function updateNotifNotice() {
+      notifNotice.classList.toggle('show', 'Notification' in window && Notification.permission === 'default');
+    }
+    async function askNotif() {
+      if (!('Notification' in window)) return 'unsupported';
+      if (Notification.permission !== 'default') return Notification.permission;
+      try { const r = await Notification.requestPermission(); updateNotifNotice(); return r; }
+      catch { return 'denied'; }
+    }
+    document.getElementById('btnNotif').addEventListener('click', async () => {
+      const r = await askNotif();
+      toast(r === 'granted' ? 'اعلان فعال شد' : 'اعلان فعال نشد؛ از تنظیمات مرورگر اجازه دهید');
+    });
+    async function notify(title, body) {
+      if (!('Notification' in window) || Notification.permission !== 'granted') return;
+      const opts = { body, icon: 'icon-192.png', badge: 'icon-192.png', tag: 'planner-timer-' + Date.now(), requireInteraction: true, vibrate: [300, 150, 300], lang: 'fa', dir: 'rtl' };
+      try {
+        if (navigator.serviceWorker && navigator.serviceWorker.controller) {
+          const reg = await navigator.serviceWorker.ready;
+          await reg.showNotification(title, opts);
+          return;
+        }
+      } catch { /* fallback */ }
+      try { const n = new Notification(title, opts); n.onclick = () => { window.focus(); n.close(); }; } catch { /* ignore */ }
+    }
+
+    // ---- منطق تایمر ----
+    const pad = n => String(n).padStart(2, '0');
+    function fmtClock(sec) {
+      sec = Math.max(0, Math.round(sec));
+      const h = Math.floor(sec / 3600), m = Math.floor((sec % 3600) / 60), s2 = sec % 60;
+      return (h ? pad(h) + ':' : '') + pad(m) + ':' + pad(s2);
+    }
+    function saveTimers() {
+      const out = {};
+      Object.entries(timers).forEach(([k, t]) => { out[k] = { day: t.day, minutes: t.minutes, total: t.total, remaining: t.remaining, endAt: t.endAt, running: t.running, done: t.done }; });
+      try { localStorage.setItem(TIMER_KEY, JSON.stringify(out)); } catch { /* ignore */ }
+    }
+    function loadTimers() {
+      try { return JSON.parse(localStorage.getItem(TIMER_KEY)) || {}; } catch { return {}; }
+    }
+    function budgetMinutes(kind, dayId) { return Math.round(state[dayId][kind][1]); }
+
+    function renderTimer(t) {
+      const rem = t.running ? Math.max(0, (t.endAt - Date.now()) / 1000) : t.remaining;
+      t.el.querySelector('[data-display]').textContent = fmtClock(rem);
+      const pct = t.total > 0 ? Math.min(100, Math.max(0, 100 * (1 - rem / t.total))) : 0;
+      t.el.querySelector('[data-progress]').style.width = pct + '%';
+      const inp = t.el.querySelector('[data-minutes]');
+      if (document.activeElement !== inp) inp.value = toFa(t.minutes);
+      t.el.classList.toggle('running', t.running);
+      t.el.classList.toggle('done', t.done);
+      t.el.querySelector('[data-tact="start"]').textContent = t.running ? 'در حال اجرا' : (t.remaining < t.total && t.remaining > 0 && !t.done ? 'ادامه' : 'شروع');
+      t.el.querySelector('[data-tact="start"]').disabled = t.running;
+      t.el.querySelector('[data-tact="pause"]').disabled = !t.running;
+      const st = t.el.querySelector('[data-status]');
+      if (t.done) st.textContent = `زمان ${TIMER_LABEL[t.key]} تمام شد!`;
+      else if (t.running) st.textContent = `پایان: ${new Date(t.endAt).toLocaleTimeString('fa-IR', { hour: '2-digit', minute: '2-digit' })}`;
+      else if (t.remaining < t.total && t.remaining > 0) st.textContent = 'متوقف شده';
+      else st.textContent = '';
+      document.title = Object.values(timers).some(x => x.running)
+        ? `${fmtClock(rem)} — ${TIMER_LABEL[t.key]} | برنامهٔ مطالعه و تفریح`
+        : 'برنامهٔ مطالعه و تفریح';
+    }
+
+    function setMinutes(t, m) {
+      t.minutes = Math.max(1, Math.min(720, Math.round(m)));
+      if (!t.running) { t.total = t.minutes * 60; t.remaining = t.total; t.done = false; }
+      saveTimers(); renderTimer(t);
+    }
+    function startTimer(t) {
+      if (t.running) return;
+      getAudio();            // باز کردن قفل صدا با کلیک کاربر
+      askNotif();
+      stopAlarm();
+      if (t.done || t.remaining <= 0) { t.total = t.minutes * 60; t.remaining = t.total; }
+      t.done = false;
+      t.endAt = Date.now() + t.remaining * 1000;
+      t.running = true;
+      saveTimers(); renderTimer(t); ensureTick();
+    }
+    function pauseTimer(t) {
+      if (!t.running) return;
+      t.remaining = Math.max(0, (t.endAt - Date.now()) / 1000);
+      t.running = false; t.endAt = null;
+      saveTimers(); renderTimer(t);
+    }
+    function resetTimer(t) {
+      stopAlarm();
+      t.running = false; t.endAt = null; t.done = false;
+      t.total = t.minutes * 60; t.remaining = t.total;
+      saveTimers(); renderTimer(t);
+    }
+    function finishTimer(t) {
+      t.running = false; t.endAt = null; t.remaining = 0; t.done = true;
+      saveTimers(); renderTimer(t);
+      startAlarm(t.key);
+      const dayName = fullName(byId[t.day]);
+      notify(`زمان ${TIMER_LABEL[t.key]} تمام شد`, `${dayName} — ${toFa(t.minutes)} دقیقه ${TIMER_LABEL[t.key]} به پایان رسید.`);
+      toast(`⏰ زمان ${TIMER_LABEL[t.key]} تمام شد!`, 'قطع صدا', stopAlarm);
+    }
+
+    let tickHandle = null;
+    function tick() {
+      let any = false;
+      Object.values(timers).forEach(t => {
+        if (!t.running) return;
+        if (Date.now() >= t.endAt) finishTimer(t);
+        else { any = true; renderTimer(t); }
+      });
+      if (!any && tickHandle) { clearInterval(tickHandle); tickHandle = null; }
+    }
+    function ensureTick() { if (!tickHandle) tickHandle = setInterval(tick, 250); }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) tick(); });
+
+    function initTimers() {
+      const saved = loadTimers();
+      document.querySelectorAll('.timer[data-timer]').forEach(el => {
+        const key = el.dataset.timer;
+        const sel = el.querySelector('[data-day]');
+        sel.innerHTML = DAYS.map(d => `<option value="${d.id}">${fullName(d)}</option>`).join('');
+        const sv = saved[key] || {};
+        const day = byId[sv.day] ? sv.day : 'sat';
+        const minutes = Number.isFinite(sv.minutes) && sv.minutes > 0 ? sv.minutes : Math.max(1, budgetMinutes(key, day));
+        const t = timers[key] = {
+          key, el, day, minutes,
+          total: sv.total > 0 ? sv.total : minutes * 60,
+          remaining: Number.isFinite(sv.remaining) ? sv.remaining : minutes * 60,
+          endAt: sv.endAt || null, running: !!sv.running, done: !!sv.done,
+        };
+        sel.value = day;
+        if (t.running && (!t.endAt || Date.now() >= t.endAt)) {
+          // در زمان بسته‌بودن صفحه تمام شده
+          t.running = false; t.endAt = null; t.remaining = 0; t.done = true;
+        }
+        sel.addEventListener('change', () => {
+          t.day = sel.value;
+          if (!t.running) setMinutes(t, Math.max(1, budgetMinutes(key, t.day)));
+          else { saveTimers(); }
+        });
+        const inp = el.querySelector('[data-minutes]');
+        inp.addEventListener('focus', () => inp.select());
+        inp.addEventListener('input', () => { const n = parseFloat(toEn(inp.value)); if (Number.isFinite(n) && n > 0) setMinutes(t, n); });
+        inp.addEventListener('blur', () => renderTimer(t));
+        inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); inp.blur(); startTimer(t); } });
+        el.addEventListener('click', e => {
+          const b = e.target.closest('button[data-tact]'); if (!b) return;
+          const a = b.dataset.tact;
+          if (a === 'inc') setMinutes(t, Math.round(t.minutes / 5) * 5 + 5);
+          else if (a === 'dec') setMinutes(t, Math.round(t.minutes / 5) * 5 - 5);
+          else if (a === 'start') startTimer(t);
+          else if (a === 'pause') pauseTimer(t);
+          else if (a === 'reset') resetTimer(t);
+        });
+        renderTimer(t);
+        if (t.done && sv.running) toast(`⏰ زمان ${TIMER_LABEL[key]} در زمان بسته‌بودن صفحه تمام شد`);
+      });
+      saveTimers();
+      if (Object.values(timers).some(t => t.running)) ensureTick();
+      updateNotifNotice();
+    }
+    // وقتی بودجهٔ یک روز تغییر می‌کند، تایمرِ غیرفعالِ همان روز به‌روز شود
+    const _setValue = setValue;
+    setValue = function (id, key, idx, minutes) {
+      _setValue(id, key, idx, minutes);
+      const t = timers[key];
+      if (t && !t.running && t.day === id && idx === 1) setMinutes(t, Math.max(1, budgetMinutes(key, id)));
+    };
+
     /* ================= شروع ================= */
     renderCards();
     applyView();
     renderPrint();
+    initTimers();
   </script>
 </body>
 </html>

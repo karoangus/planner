@@ -1,5 +1,5 @@
 'use strict';
-const CACHE = 'study-planner-v3';
+const CACHE = 'study-planner-v4';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon.svg', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
@@ -22,6 +22,16 @@ self.addEventListener('fetch', e => {
         return res;
       }).catch(() => cached);
       return cached || network;
+    })
+  );
+});
+
+self.addEventListener('notificationclick', e => {
+  e.notification.close();
+  e.waitUntil(
+    self.clients.matchAll({ type: 'window', includeUncontrolled: true }).then(list => {
+      const c = list.find(x => 'focus' in x);
+      return c ? c.focus() : self.clients.openWindow('./');
     })
   );
 });
