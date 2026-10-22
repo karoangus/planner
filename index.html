@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0f1115">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="برنامهٔ مطالعه">
+  <meta name="description" content="برنامه‌ریزی هفتگی زمان مطالعه و بودجهٔ تفریح">
+  <title>برنامهٔ مطالعه و تفریح</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon-192.png">
+  <style>
+    :root {
+      --bg: #0f1115;
+      --surface: #171a21;
+      --surface-2: #1f232c;
+      --border: #2a2f3a;
+      --text: #e8eaf0;
+      --muted: #9aa3b2;
+      --accent: #7c9cff;
+      --accent-2: #5ee0b8;
+      --danger: #ff6b7a;
+      --radius: 16px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, .35);
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; padding: 0; }
+
+    body {
+      font-family: Vazirmatn, "Vazir", "IRANSans", "Segoe UI", Tahoma, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .app {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -.01em;
+    }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .btn {
+      appearance: none;
+      border: 1px solid var(--border);
+      background: var(--surface-2);
+      color: var(--text);
+      font: inherit;
+      font-size: .95rem;
+      min-height: 44px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background .15s, border-color .15s, transform .05s;
+    }
+    .btn:hover { background: #262b36; border-color: #353b48; }
+    .btn:active { transform: scale(.98); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #0b0e14; font-weight: 700; }
+    .btn-primary:hover { background: #91acff; border-color: #91acff; }
+    .btn-danger { color: var(--danger); }
+    .btn-danger:hover { border-color: var(--danger); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .card h2::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    .card.exam h2::before { background: var(--accent-2); }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field label { font-size: .85rem; color: var(--muted); }
+
+    .field input {
+      font: inherit;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 14px;
+      min-height: 48px;
+      width: 100%;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .field input:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(124, 156, 255, .2);
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 50%;
+      transform: translateX(50%) translateY(20px);
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 10px 18px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s;
+      font-size: .9rem;
+    }
+    .toast.show { opacity: 1; transform: translateX(50%) translateY(0); }
+
+    #printArea { display: none; }
+    #fileInput { display: none; }
+
+    @media (max-width: 480px) {
+      .toolbar { width: 100%; }
+      .btn { flex: 1 1 calc(50% - 4px); }
+      .btn-primary { flex-basis: 100%; }
+    }
+
+    /* ---------- چاپ ---------- */
+    @page { size: A4; margin: 18mm 15mm; }
+
+    @media print {
+      body { background: #fff; color: #000; font-size: 12pt; }
+      .app { display: none !important; }
+      .toast { display: none !important; }
+      #printArea { display: block; direction: rtl; }
+      #printArea h1 {
+        font-size: 20pt;
+        text-align: center;
+        margin: 0 0 14pt;
+        color: #000;
+      }
+      #printArea table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: auto;
+      }
+      #printArea th, #printArea td {
+        border: 1px solid #333;
+        padding: 8pt 10pt;
+        text-align: right;
+        vertical-align: middle;
+        word-break: keep-all;
+        white-space: nowrap;
+      }
+      #printArea th {
+        background: #eee;
+        font-weight: 700;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      #printArea thead { display: table-header-group; }
+      #printArea tr { page-break-inside: avoid; break-inside: avoid; }
+      #printArea td:first-child { font-weight: 700; }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>برنامهٔ مطالعه و تفریح</h1>
+      <div class="toolbar">
+        <button class="btn btn-primary" id="btnPrint" type="button">ساخت PDF / چاپ</button>
+        <button class="btn" id="btnExport" type="button">دریافت پشتیبان</button>
+        <button class="btn" id="btnImport" type="button">واردکردن پشتیبان</button>
+        <button class="btn btn-danger" id="btnReset" type="button">بازگرداندن مقادیر اولیه</button>
+        <input type="file" id="fileInput" accept="application/json,.json">
+      </div>
+    </header>
+
+    <main class="grid" id="cards"></main>
+  </div>
+
+  <section id="printArea" aria-hidden="true">
+    <h1>برنامهٔ مطالعه و تفریح</h1>
+    <table>
+      <thead>
+        <tr><th>روز</th><th>ساعت مطالعه</th><th>بودجهٔ تفریح</th></tr>
+      </thead>
+      <tbody id="printBody"></tbody>
+    </table>
+  </section>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script>
+    'use strict';
+
+    const STORAGE_KEY = 'study-fun-planner-v1';
+
+    const DEFAULTS = [
+      { id: 'sat',      day: 'شنبه',                 study: '۲ تا ۲٫۵ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
+      { id: 'sun',      day: 'یکشنبه',               study: '۳ تا ۳٫۵ ساعت',  fun: '۳۰ تا ۴۵ دقیقه' },
+      { id: 'mon',      day: 'دوشنبه',               study: '۲ تا ۲٫۵ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
+      { id: 'tue',      day: 'سه‌شنبه',              study: '۱ تا ۱٫۵ ساعت',  fun: 'صفر' },
+      { id: 'wed',      day: 'چهارشنبه',             study: '۲٫۵ تا ۳ ساعت',  fun: '۰ تا ۳۰ دقیقه' },
+      { id: 'thu',      day: 'پنجشنبه — بدون آزمون', study: '۴ تا ۵ ساعت',    fun: '۴۵ تا ۶۰ دقیقه', exam: true },
+      { id: 'thuExam',  day: 'پنجشنبه — با آزمون',   study: '۳ تا ۴ ساعت',    fun: '۳۰ تا ۴۵ دقیقه', exam: true },
+      { id: 'fri',      day: 'جمعه — بدون آزمون',    study: '۴ تا ۵ ساعت',    fun: '۱ تا ۱٫۵ ساعت',  exam: true },
+      { id: 'friExam',  day: 'جمعه — هفتهٔ آزمون',   study: '۱ تا ۲ ساعت',    fun: '۳۰ تا ۶۰ دقیقه', exam: true },
+    ];
+
+    /* ---------- state ---------- */
+    function defaultState() {
+      const s = {};
+      DEFAULTS.forEach(d => { s[d.id] = { study: d.study, fun: d.fun }; });
+      return s;
+    }
+
+    function sanitize(raw) {
+      const base = defaultState();
+      if (!raw || typeof raw !== 'object') return base;
+      DEFAULTS.forEach(d => {
+        const item = raw[d.id];
+        if (item && typeof item === 'object') {
+          if (typeof item.study === 'string') base[d.id].study = item.study;
+          if (typeof item.fun === 'string') base[d.id].fun = item.fun;
+        }
+      });
+      return base;
+    }
+
+    function load() {
+      try {
+        return sanitize(JSON.parse(localStorage.getItem(STORAGE_KEY)));
+      } catch {
+        return defaultState();
+      }
+    }
+
+    function save() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        toast('ذخیره‌سازی ناموفق بود');
+      }
+    }
+
+    let state = load();
+
+    /* ---------- render ---------- */
+    const cardsEl = document.getElementById('cards');
+    const printBody = document.getElementById('printBody');
+
+    function renderCards() {
+      cardsEl.innerHTML = '';
+      DEFAULTS.forEach(d => {
+        const card = document.createElement('article');
+        card.className = 'card' + (d.exam ? ' exam' : '');
+        card.innerHTML = `
+          <h2>${d.day}</h2>
+          <div class="field">
+            <label for="study-${d.id}">ساعت مطالعه</label>
+            <input id="study-${d.id}" type="text" data-id="${d.id}" data-key="study" autocomplete="off" enterkeyhint="next">
+          </div>
+          <div class="field">
+            <label for="fun-${d.id}">بودجهٔ تفریح</label>
+            <input id="fun-${d.id}" type="text" data-id="${d.id}" data-key="fun" autocomplete="off" enterkeyhint="next">
+          </div>`;
+        cardsEl.appendChild(card);
+      });
+      fillInputs();
+    }
+
+    function fillInputs() {
+      cardsEl.querySelectorAll('input[data-id]').forEach(inp => {
+        inp.value = state[inp.dataset.id][inp.dataset.key];
+      });
+    }
+
+    function renderPrint() {
+      printBody.innerHTML = '';
+      DEFAULTS.forEach(d => {
+        const tr = document.createElement('tr');
+        [d.day, state[d.id].study, state[d.id].fun].forEach(v => {
+          const td = document.createElement('td');
+          td.textContent = v || '—';
+          tr.appendChild(td);
+        });
+        printBody.appendChild(tr);
+      });
+    }
+
+    /* ---------- events ---------- */
+    cardsEl.addEventListener('input', e => {
+      const inp = e.target;
+      if (!inp.matches('input[data-id]')) return;
+      state[inp.dataset.id][inp.dataset.key] = inp.value;
+      save();
+    });
+
+    cardsEl.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' || !e.target.matches('input[data-id]')) return;
+      const inputs = [...cardsEl.querySelectorAll('input[data-id]')];
+      const next = inputs[inputs.indexOf(e.target) + 1];
+      if (next) next.focus(); else e.target.blur();
+    });
+
+    document.getElementById('btnPrint').addEventListener('click', () => {
+      renderPrint();
+      window.print();
+    });
+    window.addEventListener('beforeprint', renderPrint);
+
+    document.getElementById('btnExport').addEventListener('click', () => {
+      const payload = { app: 'study-fun-planner', version: 1, exportedAt: new Date().toISOString(), data: state };
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'study-planner-backup.json';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      toast('فایل پشتیبان دریافت شد');
+    });
+
+    const fileInput = document.getElementById('fileInput');
+    document.getElementById('btnImport').addEventListener('click', () => fileInput.click());
+    fileInput.addEventListener('change', () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const parsed = JSON.parse(reader.result);
+          const raw = parsed && parsed.data && typeof parsed.data === 'object' ? parsed.data : parsed;
+          state = sanitize(raw);
+          save();
+          fillInputs();
+          toast('پشتیبان با موفقیت وارد شد');
+        } catch {
+          toast('فایل پشتیبان معتبر نیست');
+        }
+        fileInput.value = '';
+      };
+      reader.onerror = () => toast('خواندن فایل ناموفق بود');
+      reader.readAsText(file);
+    });
+
+    document.getElementById('btnReset').addEventListener('click', () => {
+      if (!confirm('همهٔ مقادیر به حالت اولیه بازگردانده شوند؟')) return;
+      state = defaultState();
+      save();
+      fillInputs();
+      toast('مقادیر اولیه بازگردانده شد');
+    });
+
+    /* ---------- toast ---------- */
+    let toastTimer;
+    function toast(msg) {
+      const el = document.getElementById('toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => el.classList.remove('show'), 2200);
+    }
+
+    /* ---------- init ---------- */
+    renderCards();
+    renderPrint();
+
+    if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
