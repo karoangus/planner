@@ -11,6 +11,7 @@
   <meta name="apple-mobile-web-app-title" content="برنامهٔ مطالعه">
   <meta name="description" content="برنامه‌ریزی هفتگی زمان مطالعه و بودجهٔ تفریح">
   <title>برنامهٔ مطالعه و تفریح</title>
+  <script>try{var l=localStorage.getItem('study-fun-planner-lite');if(l==='1')document.documentElement.dataset.lite='1';var t=localStorage.getItem('study-fun-planner-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon-192.png">
@@ -364,6 +365,23 @@
       *, *::before, *::after { animation: none !important; transition: none !important; }
     }
 
+    /* ============ حالت سبک ============ */
+    [data-lite="1"] *, [data-lite="1"] *::before, [data-lite="1"] *::after {
+      animation: none !important;
+      transition: none !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      text-shadow: none !important;
+    }
+    [data-lite="1"] body::before { display: none; }
+    [data-lite="1"] .topbar { position: static; margin: 0 0 16px; background: var(--surface-solid); }
+    [data-lite="1"] .card, [data-lite="1"] .dock, [data-lite="1"] .menu, [data-lite="1"] .toast { background: var(--surface-solid); }
+    [data-lite="1"] .card:hover { transform: none; }
+    [data-lite="1"] .btn:active, [data-lite="1"] .stepper-row:focus-within { transform: none; box-shadow: none !important; }
+    [data-lite="1"] html { scroll-behavior: auto; }
+    .btn-icon.active { border-color: var(--accent); color: var(--accent); }
+
     /* ============ چاپ ============ */
     @page { size: A4; margin: 16mm 14mm; }
     @media print {
@@ -401,6 +419,7 @@
           <svg viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="7"/></svg>
           ساخت PDF / چاپ
         </button>
+        <button class="btn btn-icon" id="btnLite" type="button" aria-pressed="false" aria-label="حالت سبک" title="حالت سبک (غیرفعال کردن انیمیشن‌ها و افکت‌ها)">⚡</button>
         <button class="btn btn-icon" id="btnTheme" type="button" aria-label="تغییر تم" title="تغییر تم">🌙</button>
         <div class="menu-wrap">
           <button class="btn btn-icon" id="btnMenu" type="button" aria-haspopup="true" aria-expanded="false" aria-label="گزینه‌های بیشتر">⋯</button>
@@ -879,6 +898,27 @@
       const t = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
       localStorage.setItem(THEME_KEY, t);
       applyTheme(t);
+    });
+
+    /* ================= حالت سبک ================= */
+    const LITE_KEY = 'study-fun-planner-lite';
+    const btnLite = document.getElementById('btnLite');
+    function applyLite(on) {
+      document.documentElement.dataset.lite = on ? '1' : '0';
+      btnLite.setAttribute('aria-pressed', String(on));
+      btnLite.classList.toggle('active', on);
+      btnLite.title = on ? 'حالت سبک فعال است — برای غیرفعال کردن کلیک کنید' : 'حالت سبک (غیرفعال کردن انیمیشن‌ها و افکت‌ها)';
+    }
+    const savedLite = localStorage.getItem(LITE_KEY);
+    const lowEnd = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2) ||
+                   (navigator.deviceMemory && navigator.deviceMemory <= 2) ||
+                   (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches);
+    applyLite(savedLite !== null ? savedLite === '1' : !!lowEnd);
+    btnLite.addEventListener('click', () => {
+      const on = document.documentElement.dataset.lite !== '1';
+      localStorage.setItem(LITE_KEY, on ? '1' : '0');
+      applyLite(on);
+      toast(on ? 'حالت سبک فعال شد' : 'حالت سبک غیرفعال شد');
     });
 
     /* ================= میان‌برها ================= */
